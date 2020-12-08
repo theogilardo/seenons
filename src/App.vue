@@ -54,6 +54,7 @@ html
   text-decoration none
 
 button
+  cursor: pointer;
   transition .5s
 
   &:focus

@@ -12,7 +12,6 @@
 
 <style lang="stylus" scoped>
 .container
-  // border 1px solid red
   margin-bottom 2rem
   width 100%
   height 8rem

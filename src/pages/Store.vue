@@ -1,16 +1,16 @@
 <template>
   <div class="store">
-    <stream-container />
+    <user-onboarding />
   </div>
 </template>
 
 <script>
-import StreamContainer from "../components/container/StreamContainer";
+import UserOnboarding from "../components/container/UserOnboarding";
 
 export default {
   name: "Store",
   components: {
-    StreamContainer,
+    UserOnboarding,
   },
 };
 </script>
