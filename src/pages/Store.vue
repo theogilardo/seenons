@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UserOnboarding from "../components/container/UserOnboarding";
+import UserOnboarding from "../components/UserOnboarding";
 
 export default {
   name: "Store",

@@ -4,17 +4,30 @@
       <h3 class="main">What do you feel like recycling today?</h3>
       <img
         class="user-onboarding__container__image"
-        src="../../assets/recycle.jpg"
+        src="../assets/recycle.jpg"
         alt="Recycle Illustration"
       />
-      <button class="btn">Process a waste stream</button>
+      <button @click="showModalStream" class="btn">
+        Process a waste stream
+      </button>
     </div>
   </section>
 </template>
 
 <script>
+import ModalStream from "./modal/ModalStream";
+
 export default {
   name: "UserOnboarding",
+  methods: {
+    showModalStream() {
+      this.$modal.show(
+        ModalStream,
+        { text: "This text is passed as a property" },
+        { height: "600px" }
+      );
+    },
+  },
 };
 </script>
 
