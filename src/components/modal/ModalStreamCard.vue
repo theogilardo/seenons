@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div @click="activateCard" :class="{ active: isCardActive }" class="card">
     <img :src="streamSize.image" alt="Bin Seenons" class="card__image" />
     <div class="card__size">
       <h3>{{ streamSize.size }}L</h3>
@@ -36,6 +36,11 @@
 <script>
 export default {
   name: "ModalStreamCard",
+  data() {
+    return {
+      isCardActive: false,
+    };
+  },
   props: {
     streamSize: {
       type: Object,
@@ -43,8 +48,13 @@ export default {
     },
   },
   computed: {
-    wasteStreamsFiltered() {
-      return this.$store.getters.wasteStreamsFiltered;
+    wasteStreamSelected() {
+      return this.$store.getters.wasteStreamSelected;
+    },
+  },
+  methods: {
+    activateCard() {
+      this.isCardActive = !this.isCardActive;
     },
   },
 };
@@ -67,6 +77,9 @@ export default {
   color #3B3B3B
   transition .5s
 
+  &.active
+    border 1px solid #8ee2da
+
   &:not(:last-child)
     margin-bottom 3rem
 
@@ -78,10 +91,10 @@ export default {
     width 100%
     position absolute
     left 28px
-    bottom 25px
+    bottom 15px
     width 275px
-    width 10rem
-    height 10rem
+    width 11rem
+    height 11rem
     z-index: 5
 
   &__size

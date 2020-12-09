@@ -7,28 +7,29 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     wasteStreams: null,
-    wasteStreamsFiltered: null,
+    wasteStreamSelected: null,
   },
   getters: {
     wasteStreams(state) {
       return state.wasteStreams;
     },
-    wasteStreamsFiltered(state) {
-      return state.wasteStreamsFiltered;
+    wasteStreamSelected(state) {
+      return state.wasteStreamSelected;
     },
   },
   mutations: {
-    storeWasteStreams(state, wasteStreams) {
-      state.wasteStreams = wasteStreams;
+    storeWasteStreams(state, payload) {
+      state.wasteStreams = payload;
     },
-    storeWasteStreamsFiltered(state, wasteStreamSelected) {
-      state.wasteStreamsFiltered = state.wasteStreams.filter(
-        (wasteStream) => wasteStream.type === wasteStreamSelected
+    storewasteStreamSelected(state, payload) {
+      state.wasteStreamSelected = state.wasteStreams.filter(
+        (wasteStream) => wasteStream.type === payload
       );
     },
   },
   actions: {
     async getWasteStreams({ commit }) {
+      T;
       axios.get("https://api-dev-593.seenons.com/me/streams").then((res) => {
         const data = res.data;
         console.log(data);
@@ -36,5 +37,4 @@ export default new Vuex.Store({
       });
     },
   },
-  modules: {},
 });

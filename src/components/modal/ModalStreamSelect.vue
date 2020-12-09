@@ -30,15 +30,15 @@ export default {
     wasteStreams() {
       return this.$store.getters.wasteStreams;
     },
-    wasteStreamsFiltered() {
-      return this.$store.getters.wasteStreamsFiltered;
+    wasteStreamSelected() {
+      return this.$store.getters.wasteStreamSelected;
     },
   },
   methods: {
     updateWasteStream() {
       console.log(this.selected);
-      this.$store.commit("storeWasteStreamsFiltered", this.selected);
-      console.log(this.$store.getters.wasteStreamsFiltered[0]);
+      this.$store.commit("storewasteStreamSelected", this.selected);
+      console.log(this.$store.getters.wasteStreamSelected[0]);
     },
   },
 };

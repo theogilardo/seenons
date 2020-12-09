@@ -1,9 +1,9 @@
 <template>
-  <div v-if="wasteStreamsFiltered" class="cards">
+  <div v-if="wasteStreamSelected" class="cards">
     <modal-stream-card
-      v-for="wasteStreamFiltered in wasteStreamsFiltered[0].sizes"
-      :key="wasteStreamFiltered.container_product_id"
-      :stream-size="wasteStreamFiltered"
+      v-for="wasteStreamSelected in wasteStreamSelected[0].sizes"
+      :key="wasteStreamSelected.container_product_id"
+      :stream-size="wasteStreamSelected"
     />
   </div>
 </template>
@@ -17,8 +17,8 @@ export default {
     ModalStreamCard,
   },
   computed: {
-    wasteStreamsFiltered() {
-      return this.$store.getters.wasteStreamsFiltered;
+    wasteStreamSelected() {
+      return this.$store.getters.wasteStreamSelected;
     },
   },
 };
