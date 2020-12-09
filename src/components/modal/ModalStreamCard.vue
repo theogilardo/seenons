@@ -1,38 +1,34 @@
 <template>
-  <div class="layout-3D">
-    <img :src="streamSize.image" alt="Bin Seenons" class="layout-3D__image" />
-    <div class="card">
-      <div class="card__size">
-        <h3>{{ streamSize.size }}L</h3>
+  <div class="card">
+    <img :src="streamSize.image" alt="Bin Seenons" class="card__image" />
+    <div class="card__size">
+      <h3>{{ streamSize.size }}L</h3>
+    </div>
+    <div class="card__info">
+      <div v-if="streamSize.unit_price_rent">
+        <p>Rent</p>
+        <p class="card__info__price">{{ streamSize.unit_price_rent }}€</p>
       </div>
-      <div class="card__info">
-        <div v-if="streamSize.unit_price_rent">
-          <p>Rent</p>
-          <p class="card__info__price">{{ streamSize.unit_price_rent }}€</p>
-        </div>
-        <div v-if="streamSize.unit_price_placement">
-          <p>Placement</p>
-          <p class="card__info__price">
-            {{ streamSize.unit_price_placement }}€
-          </p>
-        </div>
-        <div v-if="streamSize.unit_price_pickup">
-          <p>Pickup</p>
-          <p class="card__info__price">{{ streamSize.unit_price_pickup }}€</p>
-        </div>
+      <div v-if="streamSize.unit_price_placement">
+        <p>Placement</p>
+        <p class="card__info__price">{{ streamSize.unit_price_placement }}€</p>
       </div>
+      <div v-if="streamSize.unit_price_pickup">
+        <p>Pickup</p>
+        <p class="card__info__price">{{ streamSize.unit_price_pickup }}€</p>
+      </div>
+    </div>
+    <img
+      src="../../assets/logo-background2.svg"
+      alt="Logo Seenons"
+      class="card__logo"
+    />
+    <div class="card__background">
       <img
-        src="../../assets/logo-background2.svg"
-        alt="Logo Seenons"
-        class="card__logo"
+        src="../../assets/shape.svg"
+        alt="Svg curve shape"
+        class="card__background__shape"
       />
-      <div class="card__background">
-        <img
-          src="../../assets/shape.svg"
-          alt="Svg curve shape"
-          class="card__background__shape"
-        />
-      </div>
     </div>
   </div>
 </template>
@@ -56,11 +52,26 @@ export default {
 
 <style lang="stylus" scoped>
 
-.layout-3D
+.card
+  position relative
+  overflow hidden
   width 100%
   height 14rem
-  position relative
+  border 1px solid #E2E2E2
+  border-radius 2rem
+  padding 1.5rem
+  display grid
+  align-items: center;
+  grid-template-columns 30% 1fr 30%
+  box-shadow 0 3px 6px #33333311
+  color #3B3B3B
   transition .5s
+
+  &:not(:last-child)
+    margin-bottom 3rem
+
+  &:hover
+    transform translateY(-3px)
 
   &__image
     object-fit cover
@@ -72,26 +83,6 @@ export default {
     width 10rem
     height 10rem
     z-index: 5
-
-  &:not(:last-child)
-    margin-bottom 3rem
-
-  &:hover
-    transform translateY(-3px)
-
-.card
-  position relative
-  overflow hidden
-  width 100%
-  height 100%
-  border 1px solid #E2E2E2
-  border-radius 2rem
-  padding 1.5rem
-  display grid
-  align-items: center;
-  grid-template-columns 30% 1fr 30%
-  box-shadow 0 3px 6px #33333311
-  color #3B3B3B
 
   &__size
     grid-column 2 / 3

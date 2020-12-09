@@ -66,6 +66,9 @@ button
 input:focus
   outline 0
 
+select:focus
+  outline-color #8ee2da
+
 .main
   color #37CCBE
 </style>

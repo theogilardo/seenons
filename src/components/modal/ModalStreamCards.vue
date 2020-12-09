@@ -5,7 +5,6 @@
       :key="wasteStreamFiltered.container_product_id"
       :stream-size="wasteStreamFiltered"
     />
-    <!-- <modal-stream-card /> -->
   </div>
 </template>
 
