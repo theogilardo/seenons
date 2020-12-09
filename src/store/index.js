@@ -29,7 +29,6 @@ export default new Vuex.Store({
   },
   actions: {
     async getWasteStreams({ commit }) {
-      T;
       axios.get("https://api-dev-593.seenons.com/me/streams").then((res) => {
         const data = res.data;
         console.log(data);

@@ -71,4 +71,12 @@ select:focus
 
 .main
   color #37CCBE
+
+// Dropdown
+
+.multiselect__option--highlight
+  background #37CCBE !important
+
+  &::after
+    background #37CCBE !important
 </style>
