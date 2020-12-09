@@ -1,34 +1,40 @@
 <template>
-  <div class="card">
-    <img src="../../assets/bin.png" alt="Bin Seenons" class="card__image" />
-    <div class="card__size">
-      <h3>240L</h3>
-    </div>
-    <div class="card__info">
-      <div>
-        <p>Rent</p>
-        <p class="card__info__price">2.50€</p>
-      </div>
-      <div>
-        <p>Placement</p>
-        <p class="card__info__price">5.50€</p>
-      </div>
-      <div>
-        <p>Emptying</p>
-        <p class="card__info__price">5.50€</p>
-      </div>
-    </div>
+  <div class="layout-3D">
     <img
-      src="../../assets/logo-background2.svg"
-      alt="Logo Seenons"
-      class="card__logo"
+      src="../../assets/bin.png"
+      alt="Bin Seenons"
+      class="layout-3D__image"
     />
-    <div class="card__background">
+    <div class="card">
+      <div class="card__size">
+        <h3>240L</h3>
+      </div>
+      <div class="card__info">
+        <div>
+          <p>Rent</p>
+          <p class="card__info__price">2.50€</p>
+        </div>
+        <div>
+          <p>Placement</p>
+          <p class="card__info__price">5.50€</p>
+        </div>
+        <div>
+          <p>Emptying</p>
+          <p class="card__info__price">5.50€</p>
+        </div>
+      </div>
       <img
-        src="../../assets/shape.svg"
-        alt="Svg curve shape"
-        class="card__background__shape"
+        src="../../assets/logo-background2.svg"
+        alt="Logo Seenons"
+        class="card__logo"
       />
+      <div class="card__background">
+        <img
+          src="../../assets/shape.svg"
+          alt="Svg curve shape"
+          class="card__background__shape"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -41,10 +47,28 @@ export default {
 
 <style lang="stylus" scoped>
 
-.card
-  position: relative;
+.layout-3D
   width 100%
   height 14rem
+  position relative
+
+  &__image
+    object-fit cover
+    width 100%
+    position absolute
+    left: -60px
+    bottom: -4px
+    width: 275px
+    z-index: 5
+
+  &:not(:last-child)
+    margin-bottom 8rem
+
+.card
+  position relative
+  overflow hidden
+  width 100%
+  height 100%
   border 1px solid #E2E2E2
   border-radius 2rem
   padding 1.5rem
@@ -54,17 +78,6 @@ export default {
   box-shadow 0 3px 6px #33333311
   transition .5s
   color #3B3B3B
-
-
-  &__image
-    object-fit cover
-    width 100%
-    grid-column 1 / 2
-    position: absolute;
-    left: -70px;
-    bottom: -4px;
-    width: 275px;
-    z-index: 5;
 
   &__size
     grid-column 2 / 3
@@ -116,9 +129,6 @@ export default {
 
     &__shape
       width 80%
-
-  &:not(:last-child)
-    margin-bottom 8rem
 
   &:hover
     transform translateY(-3px)

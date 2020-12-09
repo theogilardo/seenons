@@ -23,7 +23,7 @@ export default {
     this.$modal.show(
       ModalStream,
       { text: "This text is passed as a property" },
-      { height: "auto", maxHeight: "870px", width: "700px", scrollable: true }
+      { height: "650px", maxHeight: "870px", width: "700px", scrollable: true }
     );
   },
   methods: {
@@ -31,7 +31,12 @@ export default {
       this.$modal.show(
         ModalStream,
         { text: "This text is passed as a property" },
-        { height: "auto", maxHeight: "870px", width: "700px", scrollable: true }
+        {
+          height: "650px",
+          maxHeight: "870px",
+          width: "700px",
+          scrollable: true,
+        }
       );
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="modal">
     <modal-stream-select />
     <modal-stream-cards />
   </div>
@@ -19,10 +19,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.container
+.modal
   display flex;
   align-items: center;
   flex-direction column
-  padding 2rem
+  padding 2.5rem
   height 100%
 </style>
