@@ -12,7 +12,7 @@
         v-for="wasteStream in wasteStreams"
         :key="wasteStream._id"
         :value="wasteStream.type"
-        >{{ (wasteStream.name['en-gb']) | capitalize }}
+        >{{ wasteStream.name["en-gb"] | capitalize }}
       </option>
     </select>
   </section>
@@ -38,7 +38,7 @@ export default {
     updateWasteStream() {
       console.log(this.selected);
       this.$store.commit("storeWasteStreamsFiltered", this.selected);
-      console.log(this.$store.getters.wasteStreamsFiltered);
+      console.log(this.$store.getters.wasteStreamsFiltered[0]);
     },
   },
 };

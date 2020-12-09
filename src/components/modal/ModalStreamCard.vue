@@ -1,26 +1,24 @@
 <template>
   <div class="layout-3D">
-    <img
-      src="../../assets/bin.png"
-      alt="Bin Seenons"
-      class="layout-3D__image"
-    />
+    <img :src="streamSize.image" alt="Bin Seenons" class="layout-3D__image" />
     <div class="card">
       <div class="card__size">
-        <h3>240L</h3>
+        <h3>{{ streamSize.size }}L</h3>
       </div>
       <div class="card__info">
-        <div>
+        <div v-if="streamSize.unit_price_rent">
           <p>Rent</p>
-          <p class="card__info__price">2.50€</p>
+          <p class="card__info__price">{{ streamSize.unit_price_rent }}€</p>
         </div>
-        <div>
+        <div v-if="streamSize.unit_price_placement">
           <p>Placement</p>
-          <p class="card__info__price">5.50€</p>
+          <p class="card__info__price">
+            {{ streamSize.unit_price_placement }}€
+          </p>
         </div>
-        <div>
-          <p>Emptying</p>
-          <p class="card__info__price">5.50€</p>
+        <div v-if="streamSize.unit_price_pickup">
+          <p>Pickup</p>
+          <p class="card__info__price">{{ streamSize.unit_price_pickup }}€</p>
         </div>
       </div>
       <img
@@ -42,6 +40,17 @@
 <script>
 export default {
   name: "ModalStreamCard",
+  props: {
+    streamSize: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    wasteStreamsFiltered() {
+      return this.$store.getters.wasteStreamsFiltered;
+    },
+  },
 };
 </script>
 
@@ -57,13 +66,15 @@ export default {
     object-fit cover
     width 100%
     position absolute
-    left: -60px
-    bottom: -4px
-    width: 275px
+    left 28px
+    bottom 25px
+    width 275px
+    width 10rem
+    height 10rem
     z-index: 5
 
   &:not(:last-child)
-    margin-bottom 8rem
+    margin-bottom 3rem
 
   &:hover
     transform translateY(-3px)

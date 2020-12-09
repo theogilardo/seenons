@@ -1,7 +1,11 @@
 <template>
-  <div class="cards">
-    <modal-stream-card />
-    <modal-stream-card />
+  <div v-if="wasteStreamsFiltered" class="cards">
+    <modal-stream-card
+      v-for="wasteStreamFiltered in wasteStreamsFiltered[0].sizes"
+      :key="wasteStreamFiltered.container_product_id"
+      :stream-size="wasteStreamFiltered"
+    />
+    <!-- <modal-stream-card /> -->
   </div>
 </template>
 
@@ -13,6 +17,11 @@ export default {
   components: {
     ModalStreamCard,
   },
+  computed: {
+    wasteStreamsFiltered() {
+      return this.$store.getters.wasteStreamsFiltered;
+    },
+  },
 };
 </script>
 
@@ -22,6 +31,4 @@ export default {
   width 100%
   display flex
   flex-direction column
-  // align-items: center;
-  // justify-content: center;
 </style>
