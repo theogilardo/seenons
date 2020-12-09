@@ -7,15 +7,24 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     wasteStreams: null,
+    wasteStreamsFiltered: null,
   },
   getters: {
     wasteStreams(state) {
       return state.wasteStreams;
     },
+    wasteStreamsFiltered(state) {
+      return state.wasteStreamsFiltered;
+    },
   },
   mutations: {
     storeWasteStreams(state, wasteStreams) {
       state.wasteStreams = wasteStreams;
+    },
+    storeWasteStreamsFiltered(state, wasteStreamSelected) {
+      state.wasteStreamsFiltered = state.wasteStreams.filter(
+        (wasteStream) => wasteStream.type === wasteStreamSelected
+      );
     },
   },
   actions: {

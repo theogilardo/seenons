@@ -1,12 +1,18 @@
 <template>
   <section class="container">
-    <select name="waste-streams" class="container__select">
+    <select
+      ref="test"
+      v-model="selected"
+      @change="updateWasteStream"
+      name="waste-streams"
+      class="container__select"
+    >
       <option selected disabled>Select waste stream</option>
       <option
         v-for="wasteStream in wasteStreams"
         :key="wasteStream._id"
         :value="wasteStream.type"
-        >{{ wasteStream.type | capitalize }}
+        >{{ (wasteStream.name['en-gb']) | capitalize }}
       </option>
     </select>
   </section>
@@ -15,9 +21,24 @@
 <script>
 export default {
   name: "ModalStreamSelect",
+  data() {
+    return {
+      selected: "",
+    };
+  },
   computed: {
     wasteStreams() {
       return this.$store.getters.wasteStreams;
+    },
+    wasteStreamsFiltered() {
+      return this.$store.getters.wasteStreamsFiltered;
+    },
+  },
+  methods: {
+    updateWasteStream() {
+      console.log(this.selected);
+      this.$store.commit("storeWasteStreamsFiltered", this.selected);
+      console.log(this.$store.getters.wasteStreamsFiltered);
     },
   },
 };
