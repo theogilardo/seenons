@@ -19,12 +19,19 @@ import ModalStream from "./modal/ModalStream";
 
 export default {
   name: "UserOnboarding",
+  created() {
+    this.$modal.show(
+      ModalStream,
+      { text: "This text is passed as a property" },
+      { height: "auto", maxHeight: "870px", scrollable: true }
+    );
+  },
   methods: {
     showModalStream() {
       this.$modal.show(
         ModalStream,
         { text: "This text is passed as a property" },
-        { height: "600px" }
+        { height: "auto", scrollable: true }
       );
     },
   },
