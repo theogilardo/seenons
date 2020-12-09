@@ -51,6 +51,7 @@ export default {
   width 100%
   height 14rem
   position relative
+  transition .5s
 
   &__image
     object-fit cover
@@ -64,6 +65,9 @@ export default {
   &:not(:last-child)
     margin-bottom 8rem
 
+  &:hover
+    transform translateY(-3px)
+
 .card
   position relative
   overflow hidden
@@ -76,13 +80,14 @@ export default {
   align-items: center;
   grid-template-columns 30% 1fr 30%
   box-shadow 0 3px 6px #33333311
-  transition .5s
   color #3B3B3B
 
   &__size
     grid-column 2 / 3
     width 10rem
     height 10rem
+    color #646b77
+    background white
     border 6.5px solid #8EE2DA
     border-radius 50%
     display flex
@@ -90,8 +95,7 @@ export default {
     justify-content: center
     position: relative;
     transform translateX(-15px)
-    z-index: 5;
-    background: white;
+    z-index 5
 
   &__info
     display flex
@@ -129,7 +133,4 @@ export default {
 
     &__shape
       width 80%
-
-  &:hover
-    transform translateY(-3px)
 </style>

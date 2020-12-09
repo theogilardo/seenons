@@ -1,5 +1,5 @@
 <template>
-  <div class="store">
+  <div class="home">
     <user-onboarding />
   </div>
 </template>
@@ -8,7 +8,7 @@
 import UserOnboarding from "../components/UserOnboarding";
 
 export default {
-  name: "Store",
+  name: "Home",
   components: {
     UserOnboarding,
   },
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.store
+.home
   position: relative
   min-height 100vh
 </style>

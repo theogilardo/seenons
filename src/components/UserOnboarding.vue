@@ -20,11 +20,12 @@ import ModalStream from "./modal/ModalStream";
 export default {
   name: "UserOnboarding",
   created() {
-    this.$modal.show(
-      ModalStream,
-      { text: "This text is passed as a property" },
-      { height: "650px", maxHeight: "870px", width: "700px", scrollable: true }
-    );
+    this.$store.dispatch("getWasteStreams");
+    // this.$modal.show(
+    //   ModalStream,
+    //   { text: "This text is passed as a property" },
+    //   { height: "650px", maxHeight: "870px", width: "700px", scrollable: true }
+    // );
   },
   methods: {
     showModalStream() {
@@ -33,7 +34,6 @@ export default {
         { text: "This text is passed as a property" },
         {
           height: "650px",
-          maxHeight: "870px",
           width: "700px",
           scrollable: true,
         }
