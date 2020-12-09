@@ -9,7 +9,7 @@ export default new Vuex.Store({
     wasteStreams: null,
   },
   getters: {
-    getWasteStreams(state) {
+    wasteStreams(state) {
       return state.wasteStreams;
     },
   },

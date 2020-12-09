@@ -7,8 +7,11 @@ import VModal from "vue-js-modal";
 
 Vue.config.productionTip = false;
 Vue.use(VModal);
-
 Vue.component("default-layout", DefaultLayout);
+
+Vue.filter("capitalize", (text) => {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+});
 
 new Vue({
   router,

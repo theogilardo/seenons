@@ -2,13 +2,26 @@
   <section class="container">
     <select name="waste-streams" class="container__select">
       <option selected disabled>Select waste stream</option>
-      <option value="Residual Waste">Residual Waste</option>
-      <option value="Glass">Glass</option>
-      <option value="Cans">Cans</option>
-      <option value="Coffee Beans">Coffee Beans</option>
+      <option
+        v-for="wasteStream in wasteStreams"
+        :key="wasteStream._id"
+        :value="wasteStream.type"
+        >{{ wasteStream.type | capitalize }}
+      </option>
     </select>
   </section>
 </template>
+
+<script>
+export default {
+  name: "ModalStreamSelect",
+  computed: {
+    wasteStreams() {
+      return this.$store.getters.wasteStreams;
+    },
+  },
+};
+</script>
 
 <style lang="stylus" scoped>
 .container
