@@ -12,7 +12,7 @@
 
 <style lang="stylus" scoped>
 .container
-  margin-bottom 4rem
+  margin-bottom 6rem
   width 100%
   height 8rem
   display flex

@@ -19,10 +19,17 @@
       </div>
     </div>
     <img
-      src="../../assets/logo-background.png"
+      src="../../assets/logo-background2.svg"
       alt="Logo Seenons"
       class="card__logo"
     />
+    <div class="card__background">
+      <img
+        src="../../assets/shape.svg"
+        alt="Svg curve shape"
+        class="card__background__shape"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,32 +44,41 @@ export default {
 .card
   position: relative;
   width 100%
-  height 16.5rem
+  height 14rem
   border 1px solid #E2E2E2
   border-radius 2rem
   padding 1.5rem
   display grid
   align-items: center;
-  grid-template-columns 30% 1fr 35%
+  grid-template-columns 30% 1fr 30%
   box-shadow 0 3px 6px #33333311
   transition .5s
   color #3B3B3B
+
 
   &__image
     object-fit cover
     width 100%
     grid-column 1 / 2
-    border 1px solid red
+    position: absolute;
+    left: -70px;
+    bottom: -4px;
+    width: 275px;
+    z-index: 5;
 
   &__size
     grid-column 2 / 3
     width 10rem
     height 10rem
-    border 5px solid #8EE2DA
+    border 6.5px solid #8EE2DA
     border-radius 50%
     display flex
     align-items: center
     justify-content: center
+    position: relative;
+    transform translateX(-15px)
+    z-index: 5;
+    background: white;
 
   &__info
     display flex
@@ -70,8 +86,6 @@ export default {
     align-items: center
     justify-content: center
     grid-column 3 / 4
-    border 1px solid red
-
 
     & > *
       width 100%
@@ -85,18 +99,26 @@ export default {
     &__price
       background #8E99AF
       color white
-      border-radius 2rem
+      border-radius 1rem
       padding .5rem 1rem
 
   &__logo
     position: absolute
-    bottom 0
+    bottom -25px
     right 27%
     width 16rem
     object-fit cover
 
+  &__background
+    position: absolute
+    bottom -6px
+    left 0
+
+    &__shape
+      width 80%
+
   &:not(:last-child)
-    margin-bottom 5rem
+    margin-bottom 8rem
 
   &:hover
     transform translateY(-3px)
