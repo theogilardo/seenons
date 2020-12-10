@@ -25,4 +25,5 @@ export default {
   flex-direction column
   padding 2.5rem
   height 100%
+  overflow scroll
 </style>

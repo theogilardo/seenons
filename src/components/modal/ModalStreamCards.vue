@@ -1,10 +1,15 @@
 <template>
-  <div v-if="wasteStreamSelected" class="cards">
-    <modal-stream-card
-      v-for="wasteStreamSelected in wasteStreamSelected[0].sizes"
-      :key="wasteStreamSelected.container_product_id"
-      :stream-size="wasteStreamSelected"
-    />
+  <div class="container">
+    <div v-if="wasteStreamSelected" class="cards">
+      <modal-stream-card
+        v-for="wasteStreamSelected in wasteStreamSelected[0].sizes"
+        :key="wasteStreamSelected.container_product_id"
+        :stream-size="wasteStreamSelected"
+      />
+    </div>
+    <div v-else>
+      <h3>Hello</h3>
+    </div>
   </div>
 </template>
 
@@ -25,6 +30,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
+.container
+  width 100%
 
 .cards
   width 100%

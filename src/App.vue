@@ -25,13 +25,13 @@ export default {
 <style lang="stylus">
 
 #app
-  font-family Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   text-align center
 
 html
   font-size: 62.5%; // 1rem = 10px
+  font-family Arial, sans-serif
 
   h1
     font-size: 4rem;
@@ -79,4 +79,15 @@ select:focus
 
   &::after
     background #37CCBE !important
+
+// Buttons
+
+.btn
+  border none
+  width 60%
+  background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
+  padding 1.5rem
+  border-radius 2rem
+  color white
+  font-size 2rem
 </style>

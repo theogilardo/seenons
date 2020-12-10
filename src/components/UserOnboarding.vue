@@ -75,13 +75,4 @@ export default {
       transform translateY(-10px)
       width 100%
       object-fit contain
-
-.btn
-  border none
-  width 60%
-  background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
-  padding 1.5rem
-  border-radius 2rem
-  color white
-  font-size 2rem
 </style>
