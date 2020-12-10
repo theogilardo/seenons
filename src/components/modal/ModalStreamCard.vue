@@ -66,22 +66,17 @@
 <script>
 export default {
   name: "ModalStreamCard",
-  data() {
-    return {
-      isCardActive: false,
-      quantity: 1,
-    };
-  },
   props: {
     streamSize: {
       type: Object,
       required: true,
     },
   },
-  computed: {
-    wasteStreamSelected() {
-      return this.$store.getters.wasteStreamSelected;
-    },
+  data() {
+    return {
+      isCardActive: false,
+      quantity: 1,
+    };
   },
   methods: {
     activateCard() {

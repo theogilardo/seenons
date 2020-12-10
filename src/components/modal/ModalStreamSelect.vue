@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     updateWasteStream() {
+      console.log(this.labelSelected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
     },
     dropDownLabels({ name }) {

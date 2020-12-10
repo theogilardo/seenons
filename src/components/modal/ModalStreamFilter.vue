@@ -52,6 +52,10 @@ export default {
     },
     filterAscDesc() {
       this.filterDescending = !this.filterDescending;
+      if (this.filterDescending) {
+        return this.$store.commit("sortDescending");
+      }
+      return this.$store.commit("sortAscending");
     },
   },
 };
