@@ -80,6 +80,15 @@ select:focus
   &::after
     background #37CCBE !important
 
+// Toast
+
+.toast
+  background linear-gradient(42deg,#46607f,#16a891 80%,#57c595) !important
+  border-radius 2rem !important
+
+  & > svg:first-child
+    margin-right: 1rem;
+
 // Buttons
 
 .btn

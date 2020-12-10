@@ -53,7 +53,9 @@
             class="slider__wrapper__icon"
           />
         </div>
-        <button class="slider__wrapper__btn">+ Add to Cart</button>
+        <button @click="addCard" class="slider__wrapper__btn">
+          + Add to Cart
+        </button>
       </div>
     </div>
   </div>
@@ -81,6 +83,15 @@ export default {
   methods: {
     activateCard() {
       this.isCardActive = !this.isCardActive;
+    },
+    addCard() {
+      this.$toasted.success("Item added", {
+        duration: 1500,
+        icon: "check",
+        closeOnSwipe: true,
+        position: "top-center",
+        className: "toast",
+      });
     },
   },
 };
