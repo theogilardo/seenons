@@ -6,7 +6,7 @@
       track-by="_id"
       :searchable="true"
       v-model="labelSelected"
-      placeholder="Choose your waste stream"
+      placeholder="Select your waste stream"
       @input="updateWasteStream"
     ></multiselect>
   </section>
@@ -43,6 +43,9 @@ export default {
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style lang="stylus" scoped>
+
+.test
+  border-radius 20px
 
 .container
   margin-bottom 6rem

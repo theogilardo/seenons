@@ -72,6 +72,7 @@ select:focus
 .main
   color #37CCBE
 
+
 // Dropdown
 
 .multiselect__option--highlight
@@ -99,4 +100,18 @@ select:focus
   border-radius 2rem
   color white
   font-size 2rem
+
+// Keyframes
+
+@keyframes float {
+  0% {
+    transform translateY(0)
+  }
+  50% {
+    transform translateY(-20px)
+  }
+  100% {
+    transform translateY(0)
+  }
+}
 </style>

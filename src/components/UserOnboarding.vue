@@ -21,11 +21,6 @@ export default {
   name: "UserOnboarding",
   created() {
     this.$store.dispatch("getWasteStreams");
-    // this.$modal.show(
-    //   ModalStream,
-    //   { text: "This text is passed as a property" },
-    //   { height: "650px", maxHeight: "870px", width: "700px", scrollable: true }
-    // );
   },
   methods: {
     showModalStream() {
@@ -36,6 +31,7 @@ export default {
           height: "650px",
           width: "700px",
           scrollable: true,
+          styles: "border-radius: 20px",
         }
       );
     },

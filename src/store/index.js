@@ -21,6 +21,9 @@ export default new Vuex.Store({
     storeWasteStreams(state, payload) {
       state.wasteStreams = payload;
     },
+    updateWasteStreamSelectedQuantity(state, payload) {
+      state.wasteStreamSelected = payload;
+    },
     storewasteStreamSelected(state, payload) {
       state.wasteStreamSelected = state.wasteStreams.filter(
         (wasteStream) => wasteStream.type === payload
