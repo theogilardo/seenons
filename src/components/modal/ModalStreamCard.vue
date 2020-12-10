@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{ active: isCardActive }">
+  <div class="container-card" :class="{ active: isCardActive }">
     <div @click="activateCard" class="card">
       <img :src="streamSize.image" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
@@ -84,6 +84,7 @@ export default {
     },
     addCard() {
       this.$toastAddCard();
+      this.isCardActive = false;
       this.quantity = 1;
     },
     incrementQuantity() {
@@ -98,7 +99,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-.container
+.container-card
   width 100%
   height 14rem
   transition .5s

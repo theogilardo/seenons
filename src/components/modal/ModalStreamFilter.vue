@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="container__sizes">
+  <div v-if="wasteStreamSelected" class="container-filter">
+    <div class="container-filter__sizes">
       <button
         @click="setFilter('Small')"
         :class="{ active: filterSmall }"
@@ -23,13 +23,13 @@
         Large
       </button>
     </div>
-    <div class="container__filter">
+    <div class="container-filter__filter">
       <img
         @click="filterAscDesc"
         :class="{ descending: filterDescending }"
         src="../../assets/filter.svg"
         alt="Filter Icon"
-        class="container__filter__icon"
+        class="container-filter__filter__icon"
       />
     </div>
   </div>
@@ -45,6 +45,11 @@ export default {
       filterLarge: false,
       filterDescending: false,
     };
+  },
+  computed: {
+    wasteStreamSelected() {
+      return this.$store.getters.wasteStreamSelected;
+    },
   },
   methods: {
     setFilter(size) {
@@ -63,7 +68,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-.container
+.container-filter
   width 100%
   height 6rem
   margin-bottom 2.5rem

@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container-select">
     <multiselect
       :options="wasteStreams"
       :custom-label="dropDownLabels"
@@ -44,7 +44,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-.container
+.container-select
   width 100%
   height 8rem
   margin-bottom 2rem

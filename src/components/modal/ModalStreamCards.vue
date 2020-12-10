@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-cards">
     <div v-if="wasteStreamSelected" class="cards">
       <modal-stream-card
         v-for="wasteStreamSelected in wasteStreamSelected"
@@ -10,7 +10,7 @@
     <div v-else class="default">
       <h2 class="default__title">Choose a waste stream</h2>
       <img
-        src="../../assets/arrow2.svg"
+        src="../../assets/arrow.svg"
         alt="Arrow Icon"
         class="default__image"
       />
@@ -36,7 +36,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-.container
+.container-cards
   width 100%
   flex 1
 
