@@ -46,7 +46,7 @@ export default {
 .container
   width 100%
   height 8rem
-  // margin-bottom 2.5rem
+  margin-bottom 2rem
   display flex
   align-items: center
   justify-content: center

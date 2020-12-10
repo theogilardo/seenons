@@ -10,7 +10,7 @@
     <div v-else class="default">
       <h2 class="default__title">Choose a waste stream</h2>
       <img
-        src="../../assets/arrow.svg"
+        src="../../assets/arrow2.svg"
         alt="Arrow Icon"
         class="default__image"
       />

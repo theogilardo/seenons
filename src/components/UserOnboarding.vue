@@ -31,7 +31,6 @@ export default {
           height: "650px",
           width: "700px",
           scrollable: true,
-          styles: "border-radius: 20px",
         }
       );
     },

@@ -69,6 +69,22 @@ select:focus
   color #37CCBE
 
 
+// Modal
+
+.vm--modal
+  border-radius 20px !important
+
+  // &::after
+  //   content ''
+  //   position absolute
+  //   top 0
+  //   left 0
+  //   width 100%
+  //   height 100%
+  //   clip-path: polygon(50% 71%, 100% 45%, 100% 100%, 0 100%, 0 46%);
+  //   background #e4e4e4
+
+
 // Dropdown
 
 .multiselect__option--highlight
