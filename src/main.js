@@ -20,6 +20,16 @@ Vue.use(Toasted, {
 });
 Vue.component("default-layout", DefaultLayout);
 
+Vue.prototype.$toastAddCard = function() {
+  this.$toasted.success("Waste stream added", {
+    duration: 1600,
+    icon: "check",
+    position: "top-center",
+    className: "toast",
+    closeOnSwipe: true,
+  });
+};
+
 // Vue.filter("capitalize", (text) => {
 //   return text.charAt(0).toUpperCase() + text.slice(1);
 // });

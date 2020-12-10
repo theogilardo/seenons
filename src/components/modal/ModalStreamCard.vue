@@ -42,12 +42,14 @@
       <div class="slider__wrapper">
         <div class="slider__wrapper__quantity">
           <img
+            @click="decrementQuantity"
             src="../../assets/quantity-minus.svg"
             alt="Icon"
             class="slider__wrapper__icon"
           />
-          <h3 class="slider__wrapper__value">1</h3>
+          <h3 class="slider__wrapper__value">{{ quantity }}</h3>
           <img
+            @click="incrementQuantity"
             src="../../assets/quantity-plus.svg"
             alt="Icon"
             class="slider__wrapper__icon"
@@ -67,6 +69,7 @@ export default {
   data() {
     return {
       isCardActive: false,
+      quantity: 1,
     };
   },
   props: {
@@ -85,13 +88,14 @@ export default {
       this.isCardActive = !this.isCardActive;
     },
     addCard() {
-      this.$toasted.success("Item added", {
-        duration: 1500,
-        icon: "check",
-        closeOnSwipe: true,
-        position: "top-center",
-        className: "toast",
-      });
+      this.$toastAddCard();
+      this.quantity = 1;
+    },
+    incrementQuantity() {
+      this.quantity++;
+    },
+    decrementQuantity() {
+      if (this.quantity > 1) this.quantity--;
     },
   },
 };
