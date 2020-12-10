@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     updateWasteStream() {
-      console.log(this.selected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
     },
     dropDownLabels({ name }) {
@@ -44,13 +43,10 @@ export default {
 
 <style lang="stylus" scoped>
 
-.test
-  border-radius 20px
-
 .container
-  margin-bottom 6rem
   width 100%
   height 8rem
+  // margin-bottom 2.5rem
   display flex
   align-items: center
   justify-content: center

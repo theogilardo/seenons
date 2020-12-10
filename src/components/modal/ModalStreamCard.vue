@@ -153,7 +153,8 @@ export default {
       object-fit cover
 
     &__value
-      color #8E99AF
+      // color #8E99AF
+      color #646b77
       margin 0 1.5rem
 
     &__btn

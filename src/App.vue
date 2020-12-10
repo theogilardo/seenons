@@ -55,13 +55,9 @@ html
 
 button
   cursor: pointer;
-  transition .5s
 
   &:focus
     outline 0
-
-  &:hover
-    transform translateY(-3px)
 
 input:focus
   outline 0
@@ -100,6 +96,10 @@ select:focus
   border-radius 2rem
   color white
   font-size 2rem
+  transition .5s
+
+  &:hover
+    transform translateY(-3px)
 
 // Keyframes
 
