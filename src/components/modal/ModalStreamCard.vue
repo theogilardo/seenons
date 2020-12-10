@@ -8,17 +8,21 @@
       <div class="card__info">
         <div v-if="streamSize.unit_price_rent">
           <p>Rent</p>
-          <p class="card__info__price">{{ streamSize.unit_price_rent }}€</p>
+          <p class="card__info__price">
+            {{ streamSize.unit_price_rent | toFixed }} €
+          </p>
         </div>
         <div v-if="streamSize.unit_price_placement">
           <p>Placement</p>
           <p class="card__info__price">
-            {{ streamSize.unit_price_placement }}€
+            {{ streamSize.unit_price_placement | toFixed }} €
           </p>
         </div>
         <div v-if="streamSize.unit_price_pickup">
           <p>Pickup</p>
-          <p class="card__info__price">{{ streamSize.unit_price_pickup }}€</p>
+          <p class="card__info__price">
+            {{ streamSize.unit_price_pickup | toFixed }} €
+          </p>
         </div>
       </div>
       <img
@@ -89,7 +93,7 @@ export default {
   height 14rem
   transition .5s
   position relative
-  transition .7s
+  transition .5s
 
   &:not(:last-child)
     margin-bottom 3rem
@@ -109,7 +113,7 @@ export default {
   background #EFEFEF
   opacity .8
   border-radius 2rem
-  transition .7s
+  transition .5s
 
   &.active
     transform translateY(9rem)
@@ -146,6 +150,7 @@ export default {
       font-size 1.4rem
       padding 1.5rem
       background #37CCBE
+      // background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
       text-transform uppercase
       color white
       transition .5s
@@ -222,6 +227,9 @@ export default {
       color inherit
       border-radius 1rem
       padding .5rem 1rem
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
   &__logo
     position: absolute

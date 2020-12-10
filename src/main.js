@@ -9,8 +9,12 @@ Vue.config.productionTip = false;
 Vue.use(VModal);
 Vue.component("default-layout", DefaultLayout);
 
-Vue.filter("capitalize", (text) => {
-  return text.charAt(0).toUpperCase() + text.slice(1);
+// Vue.filter("capitalize", (text) => {
+//   return text.charAt(0).toUpperCase() + text.slice(1);
+// });
+
+Vue.filter("toFixed", (number) => {
+  return number.toFixed(2);
 });
 
 new Vue({
