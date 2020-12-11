@@ -11,63 +11,27 @@ export default new Vuex.Store({
     isFilterSize: false,
     sortAscending: false,
     sortDescending: false,
-    sortSmall: false,
-    sortMedium: false,
-    sortLarge: false,
+    sortSize: "All",
   },
   getters: {
     wasteStreams(state) {
       return state.wasteStreams;
     },
     wasteStreamSelected(state) {
-      if (state.sortSmall)
-        return state.wasteStreamSelected?.sizes.filter((el) => el.size < 200);
+      const test = state.wasteStreamSelected?.sizes;
+      if (state.sortSize === "Small") return test.filter((el) => el.size < 200);
 
-      if (state.sortMedium)
-        return state.wasteStreamSelected?.sizes.filter((el) => el.size === 240);
+      if (state.sortSize === "Medium")
+        return test.filter((el) => el.size === 240);
 
-      if (state.sortLarge)
-        return state.wasteStreamSelected?.sizes.filter((el) => el.size > 500);
+      if (state.sortSize === "Large") return test.filter((el) => el.size > 500);
 
-      if (!state.sortAscending && !state.sortDescending)
-        return state.wasteStreamSelected?.sizes;
-
-      // if (state.sortAscending)
-      //   return state.wasteStreamSelected.sizes.sort((a, b) =>
-      //     a.size > b.size ? 1 : -1
-      //   );
-
-      // return state.wasteStreamSelected?.sizes.sort((a, b) =>
-      //   a.size < b.size ? 1 : -1
-      // );
+      return state.wasteStreamSelected?.sizes;
     },
   },
   mutations: {
-    sortSmall(state) {
-      state.sortSmall = true;
-      state.sortMedium = false;
-      state.sortLarge = false;
-    },
-    sortMedium(state) {
-      state.sortSmall = false;
-      state.sortMedium = true;
-      state.sortLarge = false;
-    },
-    sortLarge(state) {
-      state.sortSmall = false;
-      state.sortMedium = false;
-      state.sortLarge = true;
-    },
-    sortAscending(state) {
-      state.sortAscending = true;
-      state.sortDescending = false;
-    },
-    sortDescending(state) {
-      state.sortAscending = false;
-      state.sortDescending = true;
-    },
-    sortData(state) {
-      state.isFilterSize = !state.isFilterSize;
+    sortSize(state, size) {
+      state.sortSize = size;
     },
     storeWasteStreams(state, payload) {
       state.wasteStreams = payload;

@@ -2,35 +2,33 @@
   <div v-if="wasteStreamSelected" class="container-filter">
     <div class="container-filter__sizes">
       <button
-        @click="setFilter('Small')"
+        @click="sortSize('All')"
+        :class="{ active: filterAll }"
+        class="btn--filter"
+      >
+        All
+      </button>
+      <button
+        @click="sortSize('Small')"
         :class="{ active: filterSmall }"
         class="btn--filter"
       >
         Small
       </button>
       <button
-        @click="setFilter('Medium')"
+        @click="sortSize('Medium')"
         :class="{ active: filterMedium }"
         class="btn--filter"
       >
         Medium
       </button>
       <button
-        @click="setFilter('Large')"
+        @click="sortSize('Large')"
         :class="{ active: filterLarge }"
         class="btn--filter"
       >
         Large
       </button>
-    </div>
-    <div class="container-filter__filter">
-      <img
-        @click="filterAscDesc"
-        :class="{ descending: filterDescending }"
-        src="../../assets/filter.svg"
-        alt="Filter Icon"
-        class="container-filter__filter__icon"
-      />
     </div>
   </div>
 </template>
@@ -43,7 +41,7 @@ export default {
       filterSmall: false,
       filterMedium: false,
       filterLarge: false,
-      filterDescending: false,
+      filterAll: true,
     };
   },
   computed: {
@@ -52,16 +50,9 @@ export default {
     },
   },
   methods: {
-    setFilter(size) {
+    sortSize(size) {
       this[`filter${size}`] = !this[`filter${size}`];
-      this.$store.commit(`sort${size}`);
-    },
-    filterAscDesc() {
-      this.filterDescending = !this.filterDescending;
-      if (this.filterDescending) {
-        return this.$store.commit("sortDescending");
-      }
-      return this.$store.commit("sortAscending");
+      this.$store.commit("sortSize", size);
     },
   },
 };
@@ -71,14 +62,11 @@ export default {
 
 .container-filter
   width 100%
-  // height 6rem
-  // margin-bottom 2.5rem
   padding 0 1.5rem
   grid-row 2 / 3
-  // border 1px solid red
   display flex
   align-items: center
-  justify-content: space-between
+  justify-content: center
 
   &__sizes
     display flex
