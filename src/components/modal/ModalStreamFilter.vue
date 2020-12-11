@@ -70,9 +70,10 @@ export default {
 
 .container-filter
   width 100%
-  height 6rem
-  margin-bottom 2.5rem
+  // height 6rem
+  // margin-bottom 2.5rem
   padding 0 1.5rem
+  grid-row 2 / 3
   // border 1px solid red
   display flex
   align-items: center

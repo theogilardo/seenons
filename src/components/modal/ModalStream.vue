@@ -23,9 +23,8 @@ export default {
 
 <style lang="stylus" scoped>
 .modal
-  display flex;
-  align-items: center;
-  flex-direction column
+  display grid
+  grid-template-rows 8rem 4.5rem 1fr
   padding 2.5rem
   height 100%
   overflow scroll

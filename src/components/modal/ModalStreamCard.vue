@@ -1,7 +1,7 @@
 <template>
   <div class="container-card" :class="{ active: isCardActive }">
     <div @click="activateCard" class="card">
-      <img :src="streamSize.image" alt="Bin Seenons" class="card__image" />
+      <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
         <h3>{{ streamSize.size }}L</h3>
       </div>
@@ -9,19 +9,19 @@
         <div v-if="streamSize.unit_price_rent">
           <p>Rent</p>
           <p class="card__info__price">
-            {{ streamSize.unit_price_rent | toFixed }} €
+            {{ (streamSize.unit_price_rent * quantity) | toFixed }} €
           </p>
         </div>
         <div v-if="streamSize.unit_price_placement">
           <p>Placement</p>
           <p class="card__info__price">
-            {{ streamSize.unit_price_placement | toFixed }} €
+            {{ (streamSize.unit_price_placement + pricePlacement) | toFixed }} €
           </p>
         </div>
         <div v-if="streamSize.unit_price_pickup">
           <p>Pickup</p>
           <p class="card__info__price">
-            {{ streamSize.unit_price_pickup | toFixed }} €
+            {{ (streamSize.unit_price_pickup * quantity) | toFixed }} €
           </p>
         </div>
       </div>
@@ -76,22 +76,34 @@ export default {
     return {
       isCardActive: false,
       quantity: 1,
+      pricePlacement: 0,
     };
+  },
+  computed: {
+    streamSizeImage() {
+      return this.streamSize.image
+        ? this.streamSize.image
+        : require("@/assets/bin-icon2.svg");
+    },
   },
   methods: {
     activateCard() {
       this.isCardActive = !this.isCardActive;
+      this.quantity = 1;
     },
     addCard() {
       this.$toastAddCard();
       this.isCardActive = false;
-      this.quantity = 1;
     },
     incrementQuantity() {
       this.quantity++;
+      this.pricePlacement += 8.5;
     },
     decrementQuantity() {
-      if (this.quantity > 1) this.quantity--;
+      if (this.quantity > 1) {
+        this.quantity--;
+        this.pricePlacement -= 8.5;
+      }
     },
   },
 };
@@ -105,11 +117,9 @@ export default {
   transition .5s
   position relative
   transition .5s
+  margin-bottom 3rem
 
-  &:not(:last-child)
-    margin-bottom 3rem
-
-  &:not(:last-child)&.active
+  &.active
     margin-bottom 12rem
 
   &:hover

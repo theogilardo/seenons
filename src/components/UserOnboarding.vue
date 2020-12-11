@@ -28,7 +28,7 @@ export default {
         ModalStream,
         { text: "This text is passed as a property" },
         {
-          height: "650px",
+          height: "700px",
           width: "700px",
           scrollable: true,
         }

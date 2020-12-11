@@ -46,8 +46,7 @@ export default {
 
 .container-select
   width 100%
-  height 8rem
-  margin-bottom 2rem
+  grid-row 1 / 2
   display flex
   align-items: center
   justify-content: center

@@ -37,8 +37,9 @@ export default {
 <style lang="stylus" scoped>
 
 .container-cards
+  grid-row 3 / 4
   width 100%
-  flex 1
+  margin-top 3rem
 
 .cards
   width 100%
