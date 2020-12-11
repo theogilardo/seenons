@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import ModalStream from "./modal/ModalStream";
-
 export default {
   name: "UserOnboarding",
   created() {
@@ -24,15 +22,7 @@ export default {
   },
   methods: {
     showModalStream() {
-      this.$modal.show(
-        ModalStream,
-        { text: "This text is passed as a property" },
-        {
-          height: "700px",
-          width: "700px",
-          scrollable: true,
-        }
-      );
+      this.$showModal();
     },
   },
 };

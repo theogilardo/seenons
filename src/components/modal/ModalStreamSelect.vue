@@ -23,6 +23,15 @@ export default {
       labelSelected: null,
     };
   },
+  created() {
+    if (localStorage.getItem("wasteStreamSelected")) {
+      const wasteStreamSelected = JSON.parse(
+        localStorage.getItem("wasteStreamSelected")
+      );
+      this.labelSelected = wasteStreamSelected;
+      this.updateWasteStream();
+    }
+  },
   computed: {
     wasteStreams() {
       return this.$store.getters.wasteStreams;
@@ -32,6 +41,10 @@ export default {
     updateWasteStream() {
       console.log(this.labelSelected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
+      localStorage.setItem(
+        "wasteStreamSelected",
+        JSON.stringify(this.labelSelected)
+      );
     },
     dropDownLabels({ name }) {
       return `${name["en-gb"]}`;

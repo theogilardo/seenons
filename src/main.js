@@ -5,10 +5,9 @@ import store from "./store";
 import DefaultLayout from "./layout/LayoutDefault";
 import VModal from "vue-js-modal";
 import Toasted from "vue-toasted";
-
+import ModalStream from "./components//modal/ModalStream";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-// import { faExclamationCircle,  } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faCheck);
 dom.watch();
@@ -28,6 +27,18 @@ Vue.prototype.$toastAddCard = function() {
     className: "toast",
     closeOnSwipe: true,
   });
+};
+
+Vue.prototype.$showModal = function() {
+  this.$modal.show(
+    ModalStream,
+    { text: "This text is passed as a property" },
+    {
+      height: "700px",
+      width: "700px",
+      scrollable: true,
+    }
+  );
 };
 
 // Vue.filter("capitalize", (text) => {

@@ -89,11 +89,12 @@ export default {
   methods: {
     activateCard() {
       this.isCardActive = !this.isCardActive;
-      this.quantity = 1;
     },
     addCard() {
       this.$toastAddCard();
       this.isCardActive = false;
+      this.quantity = 1;
+      this.pricePlacement = 0;
     },
     incrementQuantity() {
       this.quantity++;
