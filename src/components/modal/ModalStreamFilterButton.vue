@@ -39,8 +39,8 @@ export default {
 .btn--filter
   border none
   border-radius 2rem
-  font-size 1.4rem
-  padding 1rem 1.5rem
+  font-size 1.2rem
+  padding .75rem 1.5rem
   background white
   text-transform uppercase
   color #37CCBE

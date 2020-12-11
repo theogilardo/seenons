@@ -9,9 +9,9 @@
         src="../assets/recycle.jpg"
         alt="Recycle Illustration"
       />
-      <h3 class="user-onboarding__container__title">
+      <h4 class="user-onboarding__container__title">
         What do you feel like recycling today?
-      </h3>
+      </h4>
     </div>
   </section>
 </template>
@@ -37,9 +37,9 @@ export default {
   bottom 0
   left 50%
   transform translateX(-50%)
-  max-width 65rem
+  max-width 55rem
   width 100%
-  height 50rem;
+  height 40rem;
   background white
   border-top-left-radius 2rem
   border-top-right-radius 2rem
@@ -65,5 +65,4 @@ export default {
 
     &__title
       color #37CCBE
-      margin-top -3rem
 </style>

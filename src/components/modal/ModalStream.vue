@@ -24,8 +24,8 @@ export default {
 <style lang="stylus" scoped>
 .modal
   display grid
-  grid-template-rows 8rem 4.5rem 1fr
-  padding 2.5rem
+  grid-template-rows 6rem 4.5rem 1fr
+  padding 1rem 2.5rem 2.5rem 2.5rem
   height 100%
   overflow scroll
 </style>

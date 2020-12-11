@@ -42,8 +42,11 @@ html
   h3
     font-size: 2.4rem;
 
+  h4
+    font-size: 2em;
+
   p
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 
 *,
 *::before,
@@ -70,30 +73,24 @@ select:focus
 .vm--modal
   border-radius 20px !important
 
-  // &::after
-  //   content ''
-  //   position absolute
-  //   top 0
-  //   left 0
-  //   width 100%
-  //   height 100%
-  //   clip-path: polygon(50% 71%, 100% 45%, 100% 100%, 0 100%, 0 46%);
-  //   background #e4e4e4
-
-
 // Dropdown
 
 .multiselect__option--highlight
   background #37CCBE !important
+  font-size 1.4rem !important
 
   &::after
     background #37CCBE !important
 
-// Toast
+.multiselect,
+.multiselect__input,
+.multiselect__single
+  font-size 1.4rem !important
 
+// Toast
 .toast
   background linear-gradient(42deg,#46607f,#16a891 80%,#57c595) !important
-  border-radius 2rem !important
+  border-radius 3rem !important
 
   & > svg:first-child
     margin-right: 1rem;
@@ -102,12 +99,12 @@ select:focus
 
 .btn
   border none
-  width 60%
+  width 50%
   background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
-  padding 1.5rem
+  padding 1.25rem
   border-radius 2rem
   color white
-  font-size 2rem
+  font-size 1.8rem
   transition .5s
 
   &:hover

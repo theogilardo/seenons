@@ -3,7 +3,7 @@
     <div @click="activateCard" class="card">
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
-        <h3>{{ streamSize.size }}L</h3>
+        <h4>{{ streamSize.size }}L</h4>
       </div>
       <div class="card__info">
         <div v-if="streamSize.unit_price_rent">
@@ -47,7 +47,7 @@
             alt="Icon"
             class="slider__wrapper__icon"
           />
-          <h3 class="slider__wrapper__value">{{ quantity }}</h3>
+          <h4 class="slider__wrapper__value">{{ quantity }}</h4>
           <img
             @click="incrementQuantity"
             src="../../assets/quantity-plus.svg"
@@ -114,14 +114,14 @@ export default {
 
 .container-card
   width 100%
-  height 14rem
+  height 13rem
   transition .5s
   position relative
   transition .5s
   margin-bottom 3rem
 
   &.active
-    margin-bottom 12rem
+    margin-bottom 10rem
 
   &:hover
     transform translateY(-3px)
@@ -138,8 +138,7 @@ export default {
   transition .5s
 
   &.active
-    transform translateY(9rem)
-    margin-bottom 9rem
+    transform translateY(6.5rem)
 
   &__wrapper
     position relative
@@ -148,32 +147,30 @@ export default {
 
     &__quantity
       position absolute
-      bottom 2rem
+      bottom 1.5rem
       left 3rem
       display flex
       align-items center
       justify-content space-around
 
     &__icon
-      width 5rem
-      height 5rem
+      width 3.5rem
+      height 3.5rem
       object-fit cover
 
     &__value
-      // color #8E99AF
       color #646b77
       margin 0 1.5rem
 
     &__btn
       position absolute
-      bottom 2rem
+      bottom 1.5rem
       right 2rem
       border none
       border-radius 1.4rem
-      font-size 1.4rem
-      padding 1.5rem
+      font-size 1.2rem
+      padding 1rem 1.5rem
       background #37CCBE
-      // background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
       text-transform uppercase
       color white
       transition .5s
@@ -196,24 +193,20 @@ export default {
   background #19726f
   z-index 1
 
-  // &.active
-  //   border 1px solid #8ee2da
-
   &__image
     object-fit cover
     width 100%
     position absolute
     left 28px
     bottom 15px
-    width 275px
-    width 11rem
-    height 11rem
+    width 10rem
+    height 10rem
     z-index: 5
 
   &__size
     grid-column 2 / 3
-    width 10rem
-    height 10rem
+    width 8rem
+    height 8rem
     color #646b77
     background white
     border 6.5px solid #8EE2DA
@@ -222,7 +215,8 @@ export default {
     align-items: center
     justify-content: center
     position: relative;
-    transform translateX(-15px)
+    // transform translateX(-15px)
+    transform: translate(-6px,8px);
     z-index 5
 
   &__info
@@ -258,7 +252,7 @@ export default {
     position: absolute
     bottom -25px
     right 27%
-    width 16rem
+    width 14rem
     object-fit cover
 
   &__background
@@ -267,5 +261,5 @@ export default {
     left 0
 
     &__shape
-      width 80%
+      width 35rem
 </style>

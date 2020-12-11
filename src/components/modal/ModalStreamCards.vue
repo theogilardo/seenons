@@ -45,7 +45,7 @@ export default {
 .container-cards
   grid-row 3 / 4
   width 100%
-  margin-top 3rem
+  margin-top 1.5rem
 
 .cards
   width 100%

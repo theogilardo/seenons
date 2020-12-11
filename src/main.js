@@ -34,8 +34,8 @@ Vue.prototype.$showModal = function() {
     ModalStream,
     { text: "This text is passed as a property" },
     {
-      height: "700px",
-      width: "700px",
+      height: "600px",
+      width: "600px",
       scrollable: true,
     }
   );
