@@ -7,7 +7,10 @@
         :stream-size="wasteStreamSelected"
       />
     </div>
-    <div class="not-available" v-else-if="!wasteStreamSelected.length">
+    <div
+      class="not-available"
+      v-else-if="wasteStreamSelected && !wasteStreamSelected.length"
+    >
       <h2 class="not-available__title">This size is not available</h2>
     </div>
     <div v-else class="default">

@@ -41,10 +41,10 @@ export default {
     updateWasteStream() {
       console.log(this.labelSelected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
-      localStorage.setItem(
-        "wasteStreamSelected",
-        JSON.stringify(this.labelSelected)
-      );
+      // localStorage.setItem(
+      //   "wasteStreamSelected",
+      //   JSON.stringify(this.labelSelected)
+      // );
     },
     dropDownLabels({ name }) {
       return `${name["en-gb"]}`;
