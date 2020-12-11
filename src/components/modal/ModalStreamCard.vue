@@ -126,6 +126,90 @@ export default {
   &:hover
     transform translateY(-3px)
 
+.card
+  position relative
+  overflow hidden
+  width 100%
+  height 100%
+  border-radius 2rem
+  padding 1.5rem
+  display grid
+  align-items: center;
+  grid-template-columns 30% 1fr 30%
+  box-shadow 0 3px 6px #33333311
+  color #3B3B3B
+  background #19726f
+  z-index 1
+
+  &__image
+    object-fit cover
+    width 100%
+    position absolute
+    left 28px
+    bottom 15px
+    width 10rem
+    height 10rem
+    z-index: 5
+
+  &__size
+    grid-column 2 / 3
+    width 8rem
+    height 8rem
+    color #646b77
+    background white
+    border 6.5px solid #8EE2DA
+    border-radius 50%
+    display flex
+    align-items: center
+    justify-content: center
+    position: relative;
+    transform: translate(-6px,8px);
+    z-index 5
+
+  &__info
+    display flex
+    flex-direction column
+    align-items: center
+    justify-content: center
+    grid-column 3 / 4
+
+    & > *
+      width 100%
+      display flex
+      align-items center
+      justify-content space-between
+      color white
+
+      &:not(:last-child)
+        margin-bottom 1rem
+
+      > p
+        color inherit
+
+    &__price
+      background #8E99AF
+      color inherit
+      border-radius 1rem
+      padding .5rem 1rem
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  &__logo
+    position: absolute
+    bottom -25px
+    right 27%
+    width 14rem
+    object-fit cover
+
+  &__background
+    position: absolute
+    bottom -6px
+    left 0
+
+    &__shape
+      width 35rem
+
 .slider
   position: absolute
   top 0
@@ -174,92 +258,4 @@ export default {
       text-transform uppercase
       color white
       transition .5s
-
-      &:hover
-        transform translateY(-3px)
-
-.card
-  position relative
-  overflow hidden
-  width 100%
-  height 100%
-  border-radius 2rem
-  padding 1.5rem
-  display grid
-  align-items: center;
-  grid-template-columns 30% 1fr 30%
-  box-shadow 0 3px 6px #33333311
-  color #3B3B3B
-  background #19726f
-  z-index 1
-
-  &__image
-    object-fit cover
-    width 100%
-    position absolute
-    left 28px
-    bottom 15px
-    width 10rem
-    height 10rem
-    z-index: 5
-
-  &__size
-    grid-column 2 / 3
-    width 8rem
-    height 8rem
-    color #646b77
-    background white
-    border 6.5px solid #8EE2DA
-    border-radius 50%
-    display flex
-    align-items: center
-    justify-content: center
-    position: relative;
-    // transform translateX(-15px)
-    transform: translate(-6px,8px);
-    z-index 5
-
-  &__info
-    display flex
-    flex-direction column
-    align-items: center
-    justify-content: center
-    grid-column 3 / 4
-
-    & > *
-      width 100%
-      display flex
-      align-items center
-      justify-content space-between
-      color white
-
-      &:not(:last-child)
-        margin-bottom 1rem
-
-      > p
-        color inherit
-
-    &__price
-      background #8E99AF
-      color inherit
-      border-radius 1rem
-      padding .5rem 1rem
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-  &__logo
-    position: absolute
-    bottom -25px
-    right 27%
-    width 14rem
-    object-fit cover
-
-  &__background
-    position: absolute
-    bottom -6px
-    left 0
-
-    &__shape
-      width 35rem
 </style>

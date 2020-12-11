@@ -55,7 +55,6 @@ export default {
     display flex
     align-items center
     justify-content center
-    // border 1px solid red
 
     &__icon
       width 4rem
