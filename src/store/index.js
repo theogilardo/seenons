@@ -11,26 +11,53 @@ export default new Vuex.Store({
     isFilterSize: false,
     sortAscending: false,
     sortDescending: false,
+    sortSmall: false,
+    sortMedium: false,
+    sortLarge: false,
   },
   getters: {
     wasteStreams(state) {
       return state.wasteStreams;
     },
     wasteStreamSelected(state) {
+      if (state.sortSmall)
+        return state.wasteStreamSelected?.sizes.filter((el) => el.size < 200);
+
+      if (state.sortMedium)
+        return state.wasteStreamSelected?.sizes.filter((el) => el.size === 240);
+
+      if (state.sortLarge)
+        return state.wasteStreamSelected?.sizes.filter((el) => el.size > 500);
+
       if (!state.sortAscending && !state.sortDescending)
         return state.wasteStreamSelected?.sizes;
 
-      if (state.sortAscending)
-        return state.wasteStreamSelected.sizes.sort((a, b) =>
-          a.size > b.size ? 1 : -1
-        );
+      // if (state.sortAscending)
+      //   return state.wasteStreamSelected.sizes.sort((a, b) =>
+      //     a.size > b.size ? 1 : -1
+      //   );
 
-      return state.wasteStreamSelected?.sizes.sort((a, b) =>
-        a.size < b.size ? 1 : -1
-      );
+      // return state.wasteStreamSelected?.sizes.sort((a, b) =>
+      //   a.size < b.size ? 1 : -1
+      // );
     },
   },
   mutations: {
+    sortSmall(state) {
+      state.sortSmall = true;
+      state.sortMedium = false;
+      state.sortLarge = false;
+    },
+    sortMedium(state) {
+      state.sortSmall = false;
+      state.sortMedium = true;
+      state.sortLarge = false;
+    },
+    sortLarge(state) {
+      state.sortSmall = false;
+      state.sortMedium = false;
+      state.sortLarge = true;
+    },
     sortAscending(state) {
       state.sortAscending = true;
       state.sortDescending = false;

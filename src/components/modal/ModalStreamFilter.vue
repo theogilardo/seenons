@@ -54,6 +54,7 @@ export default {
   methods: {
     setFilter(size) {
       this[`filter${size}`] = !this[`filter${size}`];
+      this.$store.commit(`sort${size}`);
     },
     filterAscDesc() {
       this.filterDescending = !this.filterDescending;
