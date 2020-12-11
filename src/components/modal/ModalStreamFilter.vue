@@ -1,58 +1,33 @@
 <template>
   <div v-if="wasteStreamSelected" class="container-filter">
     <div class="container-filter__sizes">
-      <button
-        @click="sortSize('All')"
-        :class="{ active: filterAll }"
-        class="btn--filter"
-      >
-        All
-      </button>
-      <button
-        @click="sortSize('Small')"
-        :class="{ active: filterSmall }"
-        class="btn--filter"
-      >
-        Small
-      </button>
-      <button
-        @click="sortSize('Medium')"
-        :class="{ active: filterMedium }"
-        class="btn--filter"
-      >
-        Medium
-      </button>
-      <button
-        @click="sortSize('Large')"
-        :class="{ active: filterLarge }"
-        class="btn--filter"
-      >
-        Large
-      </button>
+      <modal-stream-filter-button filter-type="all"
+        >All
+      </modal-stream-filter-button>
+      <modal-stream-filter-button filter-type="small"
+        >Small
+      </modal-stream-filter-button>
+      <modal-stream-filter-button filter-type="medium"
+        >Medium
+      </modal-stream-filter-button>
+      <modal-stream-filter-button filter-type="large"
+        >Large
+      </modal-stream-filter-button>
     </div>
   </div>
 </template>
 
 <script>
+import ModalStreamFilterButton from "./ModalStreamFilterButton";
+
 export default {
   name: "ModalStreamFilter",
-  data() {
-    return {
-      filterSmall: false,
-      filterMedium: false,
-      filterLarge: false,
-      filterAll: true,
-    };
+  components: {
+    ModalStreamFilterButton,
   },
   computed: {
     wasteStreamSelected() {
       return this.$store.getters.wasteStreamSelected;
-    },
-  },
-  methods: {
-    sortSize(size) {
-      this[`filter${size}`] = !this[`filter${size}`];
-      this.$store.commit("sortSize", size);
     },
   },
 };
