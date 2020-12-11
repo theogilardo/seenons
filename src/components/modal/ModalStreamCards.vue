@@ -1,11 +1,14 @@
 <template>
   <div class="container-cards">
-    <div v-if="wasteStreamSelected" class="cards">
+    <div v-if="wasteStreamSelected && wasteStreamSelected.length" class="cards">
       <modal-stream-card
         v-for="wasteStreamSelected in wasteStreamSelected"
         :key="wasteStreamSelected.container_product_id"
         :stream-size="wasteStreamSelected"
       />
+    </div>
+    <div class="not-available" v-else-if="!wasteStreamSelected.length">
+      <h2 class="not-available__title">This size is not available</h2>
     </div>
     <div v-else class="default">
       <h2 class="default__title">Choose a waste stream</h2>
@@ -45,6 +48,15 @@ export default {
   width 100%
   display flex
   flex-direction column
+
+.not-available
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+
+  &__title
+    color #9c9c9c
 
 .default
   width 100%

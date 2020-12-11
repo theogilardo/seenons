@@ -65,10 +65,6 @@ input:focus
 select:focus
   outline-color #8ee2da
 
-.main
-  color #37CCBE
-
-
 // Modal
 
 .vm--modal

@@ -1,15 +1,17 @@
 <template>
   <section class="user-onboarding">
     <div class="user-onboarding__container">
-      <h3 class="main">What do you feel like recycling today?</h3>
+      <button @click="showModalStream" class="btn">
+        Process a waste stream
+      </button>
       <img
         class="user-onboarding__container__image"
         src="../assets/recycle.jpg"
         alt="Recycle Illustration"
       />
-      <button @click="showModalStream" class="btn">
-        Process a waste stream
-      </button>
+      <h3 class="user-onboarding__container__title">
+        What do you feel like recycling today?
+      </h3>
     </div>
   </section>
 </template>
@@ -60,4 +62,8 @@ export default {
       transform translateY(-10px)
       width 100%
       object-fit contain
+
+    &__title
+      color #37CCBE
+      margin-top -3rem
 </style>
