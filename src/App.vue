@@ -89,7 +89,8 @@ select:focus
 .multiselect__single
   font-size 1.4rem !important
 
-// Toast
+// Toast (Popup)
+
 .toast
   background linear-gradient(42deg,#46607f,#16a891 80%,#57c595) !important
   border-radius 3rem !important
@@ -112,7 +113,6 @@ select:focus
   @media only screen and (max-width: 560px)
       font-size: 1.5rem
 
-
   &:hover
     transform translateY(-3px)
 
@@ -132,60 +132,56 @@ select:focus
 
 // Design Cards
 
+.card-shape-brood,
+.card-shape-pmd,
+.card-shape-piepschuim,
+.card-shape-papier-karton,
+.card-shape-pet,
+.card-shape-koffiedrab,
+.card-shape-sinaasappelschillen,
+.card-shape-glass,
+.card-shape-pet-emmers,
+.card-shape-etensresten
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-circle-brood,
+.card-circle-piepschuim,
+.card-circle-pet,
+.card-circle-koffiedrab,
+.card-circle-etensresten
+  border 6.5px solid #cccccc !important
+
+// brood
 .card-background-brood
   background #733e06 !important
 
-.card-circle-brood
-  border 6.5px solid #cccccc !important
-
-.card-shape-brood
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// pmd
 .card-background-pmd
   background #f65e1c !important
 
 .card-circle-pmd
   border 6.5px solid #cccccc !important
 
-.card-shape-pmd
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// piepschuim
 .card-background-piepschuim
   background #f65e1c !important
 
-.card-circle-piepschuim
-  border 6.5px solid #cccccc !important
-
-.card-shape-piepschuim
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// karton
 .card-background-papier-karton
   background #121085 !important
 
 .card-circle-papier-karton
   border 6.5px solid #B7D4FF !important
 
-.card-shape-papier-karton
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// pet
 .card-background-pet
   background #f65e1c !important
 
-.card-circle-pet
-  border 6.5px solid #cccccc !important
-
-.card-shape-pet
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// koffiedrab
 .card-background-koffiedrab
   background #733e06 !important
 
-.card-circle-koffiedrab
-  border 6.5px solid #cccccc !important
-
-.card-shape-koffiedrab
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// sinaasappelschillen
 .card-background-sinaasappelschillen
   background #009681 !important
 
@@ -195,30 +191,21 @@ select:focus
 .card-shape-sinaasappelschillen
   filter: invert(82%) sepia(85%) saturate(4947%) hue-rotate(18deg) brightness(103%) contrast(105%) !important
 
+// glass
 .card-background-glass
   background #FFD600 !important
 
 .card-circle-glass
   border 6.5px solid #F4EDB2 !important
 
-.card-shape-glass
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// pet-emmers
 .card-background-pet-emmers
   background #e7ea05 !important
 
 .card-circle-pet-emmers
   border 6.5px solid #F4EDB2 !important
 
-.card-shape-pet-emmers
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
-
+// etensresten
 .card-background-etensresten
   background #117243 !important
-
-.card-circle-etensresten
-  border 6.5px solid #cccccc !important
-
-.card-shape-etensresten
-  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
 </style>

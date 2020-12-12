@@ -270,8 +270,14 @@ export default {
       width 33rem
       filter: invert(67%) sepia(64%) saturate(423%) hue-rotate(124deg) brightness(90%) contrast(92%);
 
-      @media only screen and (max-width: 550px)
+      @media only screen and (max-width: 585px)
         width 30rem
+
+      @media only screen and (max-width: 550px)
+        width 28rem
+
+      @media only screen and (max-width: 500px)
+        display none
 
 .slider
   position: absolute
