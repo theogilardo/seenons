@@ -160,6 +160,9 @@ export default {
       width 8rem
       height 8rem
 
+    @media only screen and (max-width: 420px)
+      transform: translate(7px, -12px);
+
   &__size
     grid-column 2 / 3
     width 8rem
@@ -174,6 +177,7 @@ export default {
     align-self center
     justify-self center
     position: relative;
+    // display none
     z-index 5
 
     @media only screen and (max-width: 550px)
@@ -183,6 +187,9 @@ export default {
     @media only screen and (max-width: 550px)
       width 6rem
       height 6rem
+
+    @media only screen and (max-width: 420px)
+      transform: translate(-39px, 15px);
 
     &__label
 

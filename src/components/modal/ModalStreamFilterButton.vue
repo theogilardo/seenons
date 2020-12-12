@@ -39,12 +39,17 @@ export default {
 .btn--filter
   border none
   border-radius 2rem
+  // font-size 1rem
   font-size 1.2rem
   padding .75rem 1.5rem
   background white
   text-transform uppercase
   color #37CCBE
   border 1px solid #37CCBE
+
+
+  @media only screen and (max-width: 420px)
+    font-size 1rem
 
   &.active
     color white

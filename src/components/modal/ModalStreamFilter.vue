@@ -37,7 +37,7 @@ export default {
 
 .container-filter
   width 100%
-  padding 0 1.5rem
+  // padding 0 1.5rem
   grid-row 2 / 3
   display flex
   align-items: center
@@ -66,19 +66,23 @@ export default {
         -webkit-transform: scale(1, -1);
         transform: scale(1, -1);
 
-.btn--filter
-  border none
-  border-radius 2rem
-  font-size 1.4rem
-  padding 1rem 1.5rem
-  background white
-  // background #37CCBE
-  // background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
-  text-transform uppercase
-  color #37CCBE
-  border 1px solid #37CCBE
+// .btn--filter
+//   border none
+//   border-radius 2rem
+//   font-size 1.4rem
+//   padding 1rem 0
+//   // padding 1rem 1.5rem
+//   background white
+//   // background #37CCBE
+//   // background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
+//   text-transform uppercase
+//   color #37CCBE
+//   border 1px solid #37CCBE
 
-  &.active
-    color white
-    background #37CCBE
+//   @media only screen and (max-width: 420px)
+//     font-size 1.2rem
+
+//   &.active
+//     color white
+//     background #37CCBE
 </style>
