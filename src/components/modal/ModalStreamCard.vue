@@ -1,8 +1,12 @@
 <template>
   <div class="container" :class="{ active: isCardActive }">
-    <div @click="toggleCard" class="card">
+    <div
+      :class="`card-background-${wasteStreamType}`"
+      @click="toggleCard"
+      class="card"
+    >
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
-      <div class="card__size">
+      <div class="card__size" :class="`card-circle-${wasteStreamType}`">
         <h4 class="card__size__label">{{ streamSize.size }}L</h4>
       </div>
       <div class="card__info">
@@ -35,6 +39,7 @@
           src="../../assets/shape.svg"
           alt="Svg curve shape"
           class="card__background__shape"
+          :class="`card-shape-${wasteStreamType}`"
         />
       </div>
     </div>
@@ -65,6 +70,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "ModalStreamCard",
   props: {
@@ -81,6 +88,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["wasteStreamType"]),
     streamSizeImage() {
       return this.streamSize.image
         ? this.streamSize.image
@@ -155,8 +163,8 @@ export default {
   display grid
   grid-template-columns 30% 1fr 1fr
   box-shadow 0 3px 6px #33333311
-  color #3B3B3B
   background #19726f
+  color #3B3B3B
   z-index 1
 
   &__image
@@ -180,8 +188,8 @@ export default {
     width 8rem
     height 8rem
     color #646b77
-    background white
     border 6.5px solid #8EE2DA
+    background white
     border-radius 50%
     display flex
     align-items: center
@@ -250,6 +258,7 @@ export default {
     bottom -25px
     right 27%
     width 14rem
+    opacity .1
     object-fit cover
 
   &__background
@@ -258,7 +267,11 @@ export default {
     left 0
 
     &__shape
-      width 35rem
+      width 33rem
+      filter: invert(67%) sepia(64%) saturate(423%) hue-rotate(124deg) brightness(90%) contrast(92%);
+
+      @media only screen and (max-width: 550px)
+        width 30rem
 
 .slider
   position: absolute

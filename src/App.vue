@@ -129,4 +129,96 @@ select:focus
     transform translateY(0)
   }
 }
+
+// Design Cards
+
+.card-background-brood
+  background #733e06 !important
+
+.card-circle-brood
+  border 6.5px solid #cccccc !important
+
+.card-shape-brood
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-pmd
+  background #f65e1c !important
+
+.card-circle-pmd
+  border 6.5px solid #cccccc !important
+
+.card-shape-pmd
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-piepschuim
+  background #f65e1c !important
+
+.card-circle-piepschuim
+  border 6.5px solid #cccccc !important
+
+.card-shape-piepschuim
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-papier-karton
+  background #121085 !important
+
+.card-circle-papier-karton
+  border 6.5px solid #B7D4FF !important
+
+.card-shape-papier-karton
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-pet
+  background #f65e1c !important
+
+.card-circle-pet
+  border 6.5px solid #cccccc !important
+
+.card-shape-pet
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-koffiedrab
+  background #733e06 !important
+
+.card-circle-koffiedrab
+  border 6.5px solid #cccccc !important
+
+.card-shape-koffiedrab
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-sinaasappelschillen
+  background #009681 !important
+
+.card-circle-sinaasappelschillen
+  border 6.5px solid #a3d4cb !important
+
+.card-shape-sinaasappelschillen
+  filter: invert(82%) sepia(85%) saturate(4947%) hue-rotate(18deg) brightness(103%) contrast(105%) !important
+
+.card-background-glass
+  background #FFD600 !important
+
+.card-circle-glass
+  border 6.5px solid #F4EDB2 !important
+
+.card-shape-glass
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-pet-emmers
+  background #e7ea05 !important
+
+.card-circle-pet-emmers
+  border 6.5px solid #F4EDB2 !important
+
+.card-shape-pet-emmers
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
+
+.card-background-etensresten
+  background #117243 !important
+
+.card-circle-etensresten
+  border 6.5px solid #cccccc !important
+
+.card-shape-etensresten
+  filter: invert(97%) sepia(4%) saturate(7%) hue-rotate(55deg) brightness(110%) contrast(87%) !important
 </style>

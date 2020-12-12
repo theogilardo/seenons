@@ -14,6 +14,9 @@ export default new Vuex.Store({
     wasteStreams(state) {
       return state.wasteStreams;
     },
+    wasteStreamType(state) {
+      return state.wasteStreamSelected.type;
+    },
     wasteStreamSelected(state) {
       const streamSelected = state.wasteStreamSelected?.sizes;
       if (state.sortType === "small")
