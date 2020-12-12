@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <div class="modal">
+  <div class="modal">
+    <div class="modal__container">
       <modal-stream-select />
       <modal-stream-filter />
       <modal-stream-cards />
@@ -25,13 +25,13 @@ export default {
 
 <style lang="stylus" scoped>
 
-.layout
+.modal
   height 100%
   width 100%
   background #ff000000
   padding 1rem
 
-.modal
+.modal__container
   display grid
   grid-template-rows 6rem 4.5rem 1fr
   padding 1rem 2.5rem 2.5rem 2.5rem

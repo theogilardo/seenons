@@ -19,7 +19,7 @@ Vue.use(Toasted, {
 });
 Vue.component("default-layout", DefaultLayout);
 
-Vue.prototype.$toastAddCard = function() {
+Vue.prototype.$toastCardAdded = function() {
   this.$toasted.success("Waste stream added", {
     duration: 1600,
     icon: "check",

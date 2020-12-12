@@ -2,9 +2,9 @@
   <div class="container-cards">
     <div v-if="wasteStreamSelected && wasteStreamSelected.length" class="cards">
       <modal-stream-card
-        v-for="wasteStreamSelected in wasteStreamSelected"
-        :key="wasteStreamSelected.container_product_id"
-        :stream-size="wasteStreamSelected"
+        v-for="wasteStream in wasteStreamSelected"
+        :key="wasteStream.container_product_id"
+        :stream-size="wasteStream"
       />
     </div>
     <div
@@ -26,6 +26,7 @@
 
 <script>
 import ModalStreamCard from "./ModalStreamCard";
+import { mapGetters } from "vuex";
 
 export default {
   name: "ModalStreamCards",
@@ -33,9 +34,7 @@ export default {
     ModalStreamCard,
   },
   computed: {
-    wasteStreamSelected() {
-      return this.$store.getters.wasteStreamSelected;
-    },
+    ...mapGetters(["wasteStreamSelected"]),
   },
 };
 </script>

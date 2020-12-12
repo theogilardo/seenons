@@ -3,10 +3,10 @@
     <multiselect
       :options="wasteStreams"
       :custom-label="dropDownLabels"
-      track-by="_id"
       :searchable="true"
-      v-model="labelSelected"
+      track-by="_id"
       placeholder="Select your waste stream"
+      v-model="labelSelected"
       @input="updateWasteStream"
     ></multiselect>
   </section>
@@ -14,6 +14,7 @@
 
 <script>
 import Multiselect from "vue-multiselect";
+import { mapGetters } from "vuex";
 
 export default {
   name: "ModalStreamSelect",
@@ -33,14 +34,14 @@ export default {
     }
   },
   computed: {
-    wasteStreams() {
-      return this.$store.getters.wasteStreams;
-    },
+    ...mapGetters(["wasteStreams"]),
   },
   methods: {
     updateWasteStream() {
-      console.log(this.labelSelected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
+      this.storeWasteStreamSelectedInLocalStorage();
+    },
+    storeWasteStreamInLocalStorage() {
       localStorage.setItem(
         "wasteStreamSelected",
         JSON.stringify(this.labelSelected)

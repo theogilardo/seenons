@@ -1,6 +1,6 @@
 <template>
   <div class="container-card" :class="{ active: isCardActive }">
-    <div @click="activateCard" class="card">
+    <div @click="toggleCard" class="card">
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
         <h4 class="card__size__label">{{ streamSize.size }}L</h4>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <img
-        src="../../assets/logo-background2.svg"
+        src="../../assets/logo-background.svg"
         alt="Logo Seenons"
         class="card__logo"
       />
@@ -42,14 +42,15 @@
       <div class="slider__wrapper">
         <div class="slider__wrapper__quantity">
           <img
-            @click="decrementQuantity"
+            @click="decrementWasteStream"
             src="../../assets/quantity-minus.svg"
             alt="Icon"
             class="slider__wrapper__icon"
+            :class="{ disabled: !isQuantityGreaterThanOne }"
           />
           <h4 class="slider__wrapper__value">{{ quantity }}</h4>
           <img
-            @click="incrementQuantity"
+            @click="incrementWasteStream"
             src="../../assets/quantity-plus.svg"
             alt="Icon"
             class="slider__wrapper__icon"
@@ -83,28 +84,46 @@ export default {
     streamSizeImage() {
       return this.streamSize.image
         ? this.streamSize.image
-        : require("@/assets/bin-icon2.svg");
+        : require("@/assets/bin-icon.svg");
+    },
+    isQuantityGreaterThanOne() {
+      return this.quantity > 1;
     },
   },
   methods: {
-    activateCard() {
+    addCard() {
+      this.$toastCardAdded();
+      this.toggleCard();
+      this.resetCard();
+    },
+    toggleCard() {
       this.isCardActive = !this.isCardActive;
     },
-    addCard() {
-      this.$toastAddCard();
-      this.isCardActive = false;
+    resetCard() {
       this.quantity = 1;
       this.pricePlacement = 0;
     },
+    incrementWasteStream() {
+      this.incrementQuantity();
+      this.incrementPlacement();
+    },
+    decrementWasteStream() {
+      if (this.isQuantityGreaterThanOne) {
+        this.decrementQuantity();
+        this.decrementPlacement();
+      }
+    },
     incrementQuantity() {
       this.quantity++;
-      this.pricePlacement += 8.5;
     },
     decrementQuantity() {
-      if (this.quantity > 1) {
-        this.quantity--;
-        this.pricePlacement -= 8.5;
-      }
+      this.quantity--;
+    },
+    incrementPlacement() {
+      this.pricePlacement += 8.5;
+    },
+    decrementPlacement() {
+      this.pricePlacement -= 8.5;
     },
   },
 };
@@ -134,22 +153,15 @@ export default {
   border-radius 2rem
   padding 1.5rem
   display grid
-  // align-items: center;
   grid-template-columns 30% 1fr 1fr
-  // grid-template-columns 30% 1fr 30%
   box-shadow 0 3px 6px #33333311
   color #3B3B3B
   background #19726f
   z-index 1
-  // justify-items center;
-  // align-items center;
 
   &__image
     object-fit cover
     width 100%
-    // position absolute
-    // left 28px
-    // bottom 15px
     width 10rem
     height 10rem
     align-self center
@@ -177,7 +189,6 @@ export default {
     align-self center
     justify-self center
     position: relative;
-    // display none
     z-index 5
 
     @media only screen and (max-width: 550px)
@@ -280,6 +291,7 @@ export default {
       width 3.5rem
       height 3.5rem
       object-fit cover
+      transition all 0.3s
 
     &__value
       color #646b77
@@ -297,4 +309,8 @@ export default {
       text-transform uppercase
       color white
       transition .5s
+
+.disabled
+  cursor disabled
+  opacity .5
 </style>

@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "ModalStreamFilterButton",
   props: {
@@ -23,8 +25,9 @@ export default {
     },
   },
   computed: {
+    ...mapGetters(["sortSize"]),
     isActive() {
-      return this.$store.getters.sortSize === this.filterType;
+      return this.sortSize === this.filterType;
     },
   },
   methods: {
