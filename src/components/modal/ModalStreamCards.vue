@@ -69,14 +69,20 @@ export default {
   flex-direction column
 
   &__title
-    margin 2rem
     background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
     -webkit-background-clip: text
     color: transparent
     opacity .8
+    text-align center
+
+    @media only screen and (max-width: 470px)
+      font-size: 2.4rem
 
   &__image
     width 25rem
     flex 1
     animation: float 3.5s ease-in-out infinite
+
+    @media only screen and (max-width: 470px)
+      width 18rem
 </style>

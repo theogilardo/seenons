@@ -1,5 +1,5 @@
 <template>
-  <div class="container-card" :class="{ active: isCardActive }">
+  <div class="container" :class="{ active: isCardActive }">
     <div @click="toggleCard" class="card">
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
@@ -131,7 +131,7 @@ export default {
 
 <style lang="stylus" scoped>
 
-.container-card
+.container
   width 100%
   height 13rem
   transition .5s
