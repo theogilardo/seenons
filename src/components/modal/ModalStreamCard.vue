@@ -3,23 +3,23 @@
     <div @click="activateCard" class="card">
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
       <div class="card__size">
-        <h4>{{ streamSize.size }}L</h4>
+        <h4 class="card__size__label">{{ streamSize.size }}L</h4>
       </div>
       <div class="card__info">
         <div v-if="streamSize.unit_price_rent">
-          <p>Rent</p>
+          <p class="card__info__label">Rent</p>
           <p class="card__info__price">
             {{ (streamSize.unit_price_rent * quantity) | toFixed }} €
           </p>
         </div>
         <div v-if="streamSize.unit_price_placement">
-          <p>Placement</p>
+          <p class="card__info__label">Placement</p>
           <p class="card__info__price">
             {{ (streamSize.unit_price_placement + pricePlacement) | toFixed }} €
           </p>
         </div>
         <div v-if="streamSize.unit_price_pickup">
-          <p>Pickup</p>
+          <p class="card__info__label">Pickup</p>
           <p class="card__info__price">
             {{ (streamSize.unit_price_pickup * quantity) | toFixed }} €
           </p>
@@ -134,22 +134,31 @@ export default {
   border-radius 2rem
   padding 1.5rem
   display grid
-  align-items: center;
-  grid-template-columns 30% 1fr 30%
+  // align-items: center;
+  grid-template-columns 30% 1fr 1fr
+  // grid-template-columns 30% 1fr 30%
   box-shadow 0 3px 6px #33333311
   color #3B3B3B
   background #19726f
   z-index 1
+  // justify-items center;
+  // align-items center;
 
   &__image
     object-fit cover
     width 100%
-    position absolute
-    left 28px
-    bottom 15px
+    // position absolute
+    // left 28px
+    // bottom 15px
     width 10rem
     height 10rem
+    align-self center
+    justify-self center
     z-index: 5
+
+    @media only screen and (max-width: 550px)
+      width 8rem
+      height 8rem
 
   &__size
     grid-column 2 / 3
@@ -162,9 +171,26 @@ export default {
     display flex
     align-items: center
     justify-content: center
+    align-self center
+    justify-self center
     position: relative;
-    transform: translate(-6px,8px);
     z-index 5
+
+    @media only screen and (max-width: 550px)
+      width 7rem
+      height 7rem
+
+    @media only screen and (max-width: 550px)
+      width 6rem
+      height 6rem
+
+    &__label
+
+      @media only screen and (max-width: 550px)
+        font-size 1.5rem
+
+      @media only screen and (max-width: 550px)
+        font-size 1.2rem
 
   &__info
     display flex
@@ -172,6 +198,8 @@ export default {
     align-items: center
     justify-content: center
     grid-column 3 / 4
+    position relative
+    z-index 5
 
     & > *
       width 100%
@@ -186,6 +214,9 @@ export default {
       > p
         color inherit
 
+    &__label
+      padding-right 2rem
+
     &__price
       background #8E99AF
       color inherit
@@ -194,6 +225,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      width max-content
 
   &__logo
     position: absolute

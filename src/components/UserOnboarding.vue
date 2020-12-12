@@ -33,21 +33,17 @@ export default {
 <style lang="stylus" scoped>
 
 .user-onboarding
-  position absolute
-  bottom 0
-  left 50%
-  transform translateX(-50%)
   max-width 55rem
   width 100%
   height 40rem;
   background white
   border-top-left-radius 2rem
   border-top-right-radius 2rem
-  margin 0 auto
   display flex
   flex-direction column
   align-items: center;
   padding 2rem
+  margin 0 3rem
 
   &__container
     flex 1
@@ -65,4 +61,8 @@ export default {
 
     &__title
       color #37CCBE
+      overflow-wrap: break-word;
+
+      @media only screen and (max-width: 500px)
+          font-size: 1.8rem
 </style>

@@ -24,4 +24,7 @@ export default {
     left 50%
     transform translatex(-50%)
     width 50rem
+
+    @media only screen and (max-width: 500px)
+      width 35rem
 </style>

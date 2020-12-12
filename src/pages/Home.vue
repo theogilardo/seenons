@@ -19,4 +19,7 @@ export default {
 .home
   position: relative
   min-height 100vh
+  display flex
+  align-items: flex-end;
+  justify-content: center;
 </style>

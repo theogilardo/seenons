@@ -37,6 +37,7 @@ Vue.prototype.$showModal = function() {
       height: "600px",
       width: "600px",
       scrollable: true,
+      adaptive: true,
     }
   );
 };

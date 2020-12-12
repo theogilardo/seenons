@@ -28,6 +28,7 @@ export default {
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   text-align center
+  overflow-x hidden
 
 html
   font-size: 62.5%; // 1rem = 10px
@@ -71,7 +72,9 @@ select:focus
 // Modal
 
 .vm--modal
-  border-radius 20px !important
+  // border-radius 20px !important
+  background #ff000000 !important
+  box-shadow 0 !important
 
 // Dropdown
 
@@ -99,13 +102,17 @@ select:focus
 
 .btn
   border none
-  width 50%
+  width max-content
   background linear-gradient(42deg,#46607f,#16a891 80%,#57c595)
   padding 1.25rem
   border-radius 2rem
   color white
   font-size 1.8rem
   transition .5s
+
+  @media only screen and (max-width: 560px)
+      font-size: 1.5rem
+
 
   &:hover
     transform translateY(-3px)
