@@ -49,6 +49,9 @@ export default {
     & > *:not(:last-child)
       margin-right 2rem
 
+      @media only screen and (max-width: 550px)
+        margin-right 1rem
+
   &__filter
     display flex
     align-items center

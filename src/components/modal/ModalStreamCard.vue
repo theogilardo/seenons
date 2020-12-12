@@ -159,9 +159,9 @@ export default {
   width 100%
   height 100%
   border-radius 2rem
-  padding 1.5rem
+  padding 2rem
   display grid
-  grid-template-columns 30% 1fr 1fr
+  grid-template-columns 30% 1fr 14rem
   box-shadow 0 3px 6px #33333311
   background #19726f
   color #3B3B3B

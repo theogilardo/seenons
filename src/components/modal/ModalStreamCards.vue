@@ -59,6 +59,10 @@ export default {
 
   &__title
     color #9c9c9c
+    text-align center
+
+    @media only screen and (max-width: 585px)
+      width 30rem
 
 .default
   width 100%
