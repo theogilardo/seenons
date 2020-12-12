@@ -8,31 +8,32 @@ export default new Vuex.Store({
   state: {
     wasteStreams: null,
     wasteStreamSelected: null,
-    sortSize: "all",
+    sortType: "all",
   },
   getters: {
     wasteStreams(state) {
       return state.wasteStreams;
     },
     wasteStreamSelected(state) {
-      const test = state.wasteStreamSelected?.sizes;
-      if (state.sortSize === "small") return test.filter((el) => el.size < 200);
+      const streamSelected = state.wasteStreamSelected?.sizes;
+      if (state.sortType === "small")
+        return streamSelected.filter((el) => el.size < 200);
 
-      if (state.sortSize === "medium")
-        return test.filter((el) => el.size >= 200 && el.size < 500);
+      if (state.sortType === "medium")
+        return streamSelected.filter((el) => el.size >= 200 && el.size < 500);
 
-      if (state.sortSize === "large")
-        return test.filter((el) => el.size >= 500);
+      if (state.sortType === "large")
+        return streamSelected.filter((el) => el.size >= 500);
 
-      return state.wasteStreamSelected?.sizes;
+      return streamSelected;
     },
-    sortSize(state) {
-      return state.sortSize;
+    sortType(state) {
+      return state.sortType;
     },
   },
   mutations: {
-    sortSize(state, size) {
-      state.sortSize = size;
+    sortType(state, size) {
+      state.sortType = size;
     },
     storeWasteStreams(state, payload) {
       state.wasteStreams = payload;

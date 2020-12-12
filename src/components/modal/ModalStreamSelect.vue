@@ -7,7 +7,7 @@
       track-by="_id"
       placeholder="Select your waste stream"
       v-model="labelSelected"
-      @input="updateWasteStream"
+      @input="updateStreamWaste"
     ></multiselect>
   </section>
 </template>
@@ -18,28 +18,38 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "ModalStreamSelect",
-  components: { Multiselect },
+  components: {
+    Multiselect,
+  },
   data() {
     return {
       labelSelected: null,
     };
   },
-  created() {
-    if (localStorage.getItem("wasteStreamSelected")) {
-      const wasteStreamSelected = JSON.parse(
-        localStorage.getItem("wasteStreamSelected")
-      );
-      this.labelSelected = wasteStreamSelected;
-      this.updateWasteStream();
-    }
-  },
   computed: {
     ...mapGetters(["wasteStreams"]),
+    isStreamWasteInLocalStorage() {
+      return localStorage.getItem("wasteStreamSelected");
+    },
+  },
+  created() {
+    if (this.isStreamWasteInLocalStorage) {
+      this.updateLabelSelected();
+      this.updateStreamWaste();
+    }
   },
   methods: {
-    updateWasteStream() {
+    updateLabelSelected() {
+      this.labelSelected = JSON.parse(
+        localStorage.getItem("wasteStreamSelected")
+      );
+    },
+    updateStreamWaste() {
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
-      this.storeWasteStreamSelectedInLocalStorage();
+
+      if (!this.isStreamWasteInLocalStorage) {
+        this.storeWasteStreamInLocalStorage();
+      }
     },
     storeWasteStreamInLocalStorage() {
       localStorage.setItem(

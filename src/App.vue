@@ -72,9 +72,8 @@ select:focus
 // Modal
 
 .vm--modal
-  // border-radius 20px !important
   background #ff000000 !important
-  box-shadow 0 !important
+  box-shadow 0 0 0 !important
 
 // Dropdown
 

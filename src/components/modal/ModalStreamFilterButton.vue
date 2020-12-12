@@ -25,14 +25,14 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["sortSize"]),
+    ...mapGetters(["sortType"]),
     isActive() {
-      return this.sortSize === this.filterType;
+      return this.sortType === this.filterType;
     },
   },
   methods: {
     sortSize(size) {
-      this.$store.commit("sortSize", size);
+      this.$store.commit("sortType", size);
     },
   },
 };
@@ -42,7 +42,6 @@ export default {
 .btn--filter
   border none
   border-radius 2rem
-  // font-size 1rem
   font-size 1.2rem
   padding .75rem 1.5rem
   background white
