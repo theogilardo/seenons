@@ -161,11 +161,15 @@ export default {
   border-radius 2rem
   padding 1rem 2rem
   display grid
-  grid-template-columns 30% 1fr 14rem
+  grid-template-columns 30% 1fr 14.5rem
   box-shadow 0 3px 6px #33333311
   background #19726f
   color #3B3B3B
   z-index 1
+
+  @media only screen and (max-width: 420px)
+    padding: 1rem 1.5rem 1rem 0.5rem
+    grid-template-columns: 30% 6rem 1fr;
 
   &__image
     object-fit cover
