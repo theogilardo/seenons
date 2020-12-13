@@ -25,14 +25,14 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["sortType"]),
+    ...mapGetters(["wasteStreamSizeFilter"]),
     isActive() {
-      return this.sortType === this.filterType;
+      return this.wasteStreamSizeFilter === this.filterType;
     },
   },
   methods: {
     sortSize(size) {
-      this.$store.commit("sortType", size);
+      this.$store.commit("wasteStreamSizeFilter", size);
     },
   },
 };

@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     wasteStreams: null,
     wasteStreamSelected: null,
-    sortType: "all",
+    wasteStreamSizeFilter: "all",
   },
   getters: {
     wasteStreams(state) {
@@ -20,13 +20,13 @@ export default new Vuex.Store({
     wasteStreamSelected(state) {
       return state.wasteStreamSelected?.sizes;
     },
-    sortType(state) {
-      return state.sortType;
+    wasteStreamSizeFilter(state) {
+      return state.wasteStreamSizeFilter;
     },
   },
   mutations: {
-    sortType(state, size) {
-      state.sortType = size;
+    wasteStreamSizeFilter(state, size) {
+      state.wasteStreamSizeFilter = size;
     },
     storeWasteStreams(state, payload) {
       state.wasteStreams = payload;

@@ -7,7 +7,7 @@
       track-by="_id"
       placeholder="Select your waste stream"
       v-model="labelSelected"
-      @input="updateStreamWaste"
+      @input="updateWasteStream"
     ></multiselect>
   </section>
 </template>
@@ -28,14 +28,14 @@ export default {
   },
   computed: {
     ...mapGetters(["wasteStreams"]),
-    isStreamWasteInLocalStorage() {
+    isWasteStreamInLocalStorage() {
       return localStorage.getItem("wasteStreamSelected");
     },
   },
   created() {
-    if (this.isStreamWasteInLocalStorage) {
+    if (this.isWasteStreamInLocalStorage) {
       this.updateLabelSelected();
-      this.updateStreamWaste();
+      this.updateWasteStream();
     }
   },
   methods: {
@@ -44,10 +44,10 @@ export default {
         localStorage.getItem("wasteStreamSelected")
       );
     },
-    updateStreamWaste() {
+    updateWasteStream() {
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
 
-      if (!this.isStreamWasteInLocalStorage) {
+      if (!this.isWasteStreamInLocalStorage) {
         this.storeWasteStreamInLocalStorage();
       }
     },

@@ -1,16 +1,16 @@
 <template>
   <div class="container-cards">
-    <div v-if="wasteStreamSelected && wasteStreamSelected.length" class="cards">
+    <div
+      v-if="wasteStreamSelectedFormatted && wasteStreamSelectedFormatted.length"
+      class="cards"
+    >
       <modal-stream-card
-        v-for="wasteStream in wasteStreamFormatted"
+        v-for="wasteStream in wasteStreamSelectedFormatted"
         :key="wasteStream.container_product_id"
         :stream-size="wasteStream"
       />
     </div>
-    <div
-      class="not-available"
-      v-else-if="wasteStreamSelected && !wasteStreamSelected.length"
-    >
+    <div class="not-available" v-else-if="!wasteStreamSelectedFormatted.length">
       <h2 class="not-available__title">This size is not available</h2>
     </div>
     <div v-else class="default">
@@ -34,17 +34,17 @@ export default {
     ModalStreamCard,
   },
   computed: {
-    ...mapGetters(["wasteStreamType", "wasteStreamSelected"]),
-    wasteStreamFormatted() {
-      if (this.wasteStreamType === "small")
+    ...mapGetters(["wasteStreamSizeFilter", "wasteStreamSelected"]),
+    wasteStreamSelectedFormatted() {
+      if (this.wasteStreamSizeFilter === "small")
         return this.wasteStreamSelected.filter((el) => el.size < 200);
 
-      if (this.wasteStreamType === "medium")
+      if (this.wasteStreamSizeFilter === "medium")
         return this.wasteStreamSelected.filter(
           (el) => el.size >= 200 && el.size < 500
         );
 
-      if (this.wasteStreamType === "large")
+      if (this.wasteStreamSizeFilter === "large")
         return this.wasteStreamSelected.filter((el) => el.size >= 500);
 
       return this.wasteStreamSelected;
