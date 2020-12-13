@@ -19,7 +19,6 @@ Vue.prototype.$showModal = function() {
       height: "600px",
       width: "600px",
       styles: "box-shadow: 0",
-      scrollable: true,
       adaptive: true,
     }
   );

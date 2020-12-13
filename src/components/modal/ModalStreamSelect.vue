@@ -45,7 +45,6 @@ export default {
       );
     },
     updateStreamWaste() {
-      console.log(this.labelSelected);
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
 
       if (!this.isStreamWasteInLocalStorage) {

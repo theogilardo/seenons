@@ -94,6 +94,8 @@ select:focus
 .toast
   background linear-gradient(42deg,#46607f,#16a891 80%,#57c595) !important
   border-radius 3rem !important
+  width: max-content !important;
+  margin: 0 auto;
 
   & > svg:first-child
     margin-right: 1rem;
@@ -155,16 +157,15 @@ select:focus
 .card-background-brood
   background #733e06 !important
 
-// pmd
-.card-background-pmd
+// pmd, piepschuim, pet
+.card-background-pmd,
+.card-background-piepschuim,
+.card-background-pet
   background #f65e1c !important
 
+// pmd
 .card-circle-pmd
   border 6.5px solid #cccccc !important
-
-// piepschuim
-.card-background-piepschuim
-  background #f65e1c !important
 
 // karton
 .card-background-papier-karton
@@ -172,10 +173,6 @@ select:focus
 
 .card-circle-papier-karton
   border 6.5px solid #B7D4FF !important
-
-// pet
-.card-background-pet
-  background #f65e1c !important
 
 // koffiedrab
 .card-background-koffiedrab
@@ -191,17 +188,12 @@ select:focus
 .card-shape-sinaasappelschillen
   filter: invert(82%) sepia(85%) saturate(4947%) hue-rotate(18deg) brightness(103%) contrast(105%) !important
 
-// glass
-.card-background-glass
+// glass, pet-emmers
+.card-background-glass,
+.card-background-pet-emmers
   background #FFD600 !important
 
-.card-circle-glass
-  border 6.5px solid #F4EDB2 !important
-
-// pet-emmers
-.card-background-pet-emmers
-  background #e7ea05 !important
-
+.card-circle-glass,
 .card-circle-pet-emmers
   border 6.5px solid #F4EDB2 !important
 
