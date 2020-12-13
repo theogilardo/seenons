@@ -14,7 +14,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "ModalStreamFilterButton",
+  name: "ModalWasteStreamFilterButton",
   props: {
     filterSize: {
       type: String,

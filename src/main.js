@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import DefaultLayout from "./layout/LayoutDefault";
 import VModal from "vue-js-modal";
 import Toasted from "vue-toasted";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
@@ -18,7 +17,6 @@ Vue.use(Toasted, {
   iconPack: "fontawesome",
 });
 
-Vue.component("default-layout", DefaultLayout);
 Vue.config.productionTip = false;
 
 new Vue({

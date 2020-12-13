@@ -73,7 +73,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "ModalStreamCard",
+  name: "ModalWasteStreamCard",
   props: {
     streamSize: {
       type: Object,

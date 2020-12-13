@@ -1,5 +1,5 @@
 import Vue from "vue";
-import ModalStream from "../components//modal/ModalStream";
+import ModalWasteStream from "../components//modal/ModalWasteStream";
 
 Vue.prototype.$toastCardAdded = function() {
   this.$toasted.success("Waste stream added", {
@@ -13,7 +13,7 @@ Vue.prototype.$toastCardAdded = function() {
 
 Vue.prototype.$showModal = function() {
   this.$modal.show(
-    ModalStream,
+    ModalWasteStream,
     { text: "This text is passed as a property" },
     {
       height: "600px",

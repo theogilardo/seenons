@@ -1,30 +1,30 @@
 <template>
   <div v-if="wasteStreamFilterSize" class="container-filter">
     <div class="container-filter__sizes">
-      <modal-stream-filter-button filter-size="all"
+      <modal-waste-stream-filter-button filter-size="all"
         >All
-      </modal-stream-filter-button>
-      <modal-stream-filter-button filter-size="small"
+      </modal-waste-stream-filter-button>
+      <modal-waste-stream-filter-button filter-size="small"
         >Small
-      </modal-stream-filter-button>
-      <modal-stream-filter-button filter-size="medium"
+      </modal-waste-stream-filter-button>
+      <modal-waste-stream-filter-button filter-size="medium"
         >Medium
-      </modal-stream-filter-button>
-      <modal-stream-filter-button filter-size="large"
+      </modal-waste-stream-filter-button>
+      <modal-waste-stream-filter-button filter-size="large"
         >Large
-      </modal-stream-filter-button>
+      </modal-waste-stream-filter-button>
     </div>
   </div>
 </template>
 
 <script>
-import ModalStreamFilterButton from "./ModalStreamFilterButton";
+import ModalWasteStreamFilterButton from "./ModalWasteStreamFilterButton";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "ModalStreamFilter",
+  name: "ModalWasteStreamFilter",
   components: {
-    ModalStreamFilterButton,
+    ModalWasteStreamFilterButton,
   },
   computed: {
     ...mapGetters(["wasteStreamSelected", "wasteStreamFilterSize"]),

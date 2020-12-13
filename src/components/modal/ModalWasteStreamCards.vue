@@ -1,7 +1,7 @@
 <template>
   <div class="container-cards">
     <div v-if="wasteStreamSelectedFormatted.length" class="cards">
-      <modal-stream-card
+      <modal-waste-stream-card
         v-for="wasteStream in wasteStreamSelectedFormatted"
         :key="wasteStream.container_product_id"
         :stream-size="wasteStream"
@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import ModalStreamCard from "./ModalStreamCard";
+import ModalWasteStreamCard from "./ModalWasteStreamCard";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "ModalStreamCards",
+  name: "ModalWasteStreamCards",
   components: {
-    ModalStreamCard,
+    ModalWasteStreamCard,
   },
   computed: {
     ...mapGetters(["wasteStreamSelected", "wasteStreamFilterSize"]),

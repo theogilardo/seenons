@@ -1,24 +1,24 @@
 <template>
   <div class="modal">
     <div class="modal__container">
-      <modal-stream-select />
-      <modal-stream-filter />
-      <modal-stream-cards />
+      <modal-waste-stream-select />
+      <modal-waste-stream-filter />
+      <modal-waste-stream-cards />
     </div>
   </div>
 </template>
 
 <script>
-import ModalStreamSelect from "./ModalStreamSelect";
-import ModalStreamFilter from "./ModalStreamFilter";
-import ModalStreamCards from "./ModalStreamCards";
+import ModalWasteStreamSelect from "./ModalWasteStreamSelect";
+import ModalWasteStreamFilter from "./ModalWasteStreamFilter";
+import ModalWasteStreamCards from "./ModalWasteStreamCards";
 
 export default {
-  name: "ModalStream",
+  name: "ModalWasteStream",
   components: {
-    ModalStreamSelect,
-    ModalStreamFilter,
-    ModalStreamCards,
+    ModalWasteStreamSelect,
+    ModalWasteStreamFilter,
+    ModalWasteStreamCards,
   },
 };
 </script>

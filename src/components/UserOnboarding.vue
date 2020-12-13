@@ -1,7 +1,7 @@
 <template>
   <section class="user-onboarding">
     <div class="user-onboarding__container">
-      <button @click="showModalStream" class="btn">
+      <button @click="showModal" class="btn">
         Process a waste stream
       </button>
       <img
@@ -23,7 +23,7 @@ export default {
     this.$store.dispatch("getWasteStreams");
   },
   methods: {
-    showModalStream() {
+    showModal() {
       this.$showModal();
     },
   },
