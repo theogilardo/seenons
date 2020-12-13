@@ -18,17 +18,7 @@ export default new Vuex.Store({
       return state.wasteStreamSelected.type;
     },
     wasteStreamSelected(state) {
-      const streamSelected = state.wasteStreamSelected?.sizes;
-      if (state.sortType === "small")
-        return streamSelected.filter((el) => el.size < 200);
-
-      if (state.sortType === "medium")
-        return streamSelected.filter((el) => el.size >= 200 && el.size < 500);
-
-      if (state.sortType === "large")
-        return streamSelected.filter((el) => el.size >= 500);
-
-      return streamSelected;
+      return state.wasteStreamSelected?.sizes;
     },
     sortType(state) {
       return state.sortType;

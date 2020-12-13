@@ -2,7 +2,7 @@
   <div class="container-cards">
     <div v-if="wasteStreamSelected && wasteStreamSelected.length" class="cards">
       <modal-stream-card
-        v-for="wasteStream in wasteStreamSelected"
+        v-for="wasteStream in wasteStreamFormatted"
         :key="wasteStream.container_product_id"
         :stream-size="wasteStream"
       />
@@ -34,7 +34,21 @@ export default {
     ModalStreamCard,
   },
   computed: {
-    ...mapGetters(["wasteStreamSelected"]),
+    ...mapGetters(["wasteStreamType", "wasteStreamSelected"]),
+    wasteStreamFormatted() {
+      if (this.wasteStreamType === "small")
+        return this.wasteStreamSelected.filter((el) => el.size < 200);
+
+      if (this.wasteStreamType === "medium")
+        return this.wasteStreamSelected.filter(
+          (el) => el.size >= 200 && el.size < 500
+        );
+
+      if (this.wasteStreamType === "large")
+        return this.wasteStreamSelected.filter((el) => el.size >= 500);
+
+      return this.wasteStreamSelected;
+    },
   },
 };
 </script>
