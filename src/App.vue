@@ -1,24 +1,12 @@
 <template>
   <div id="app">
-    <component :is="layout">
-      <router-view />
-    </component>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
-  data() {
-    return {
-      defaultLayout: "default",
-    };
-  },
-  computed: {
-    layout() {
-      return (this.$route.meta.layout || this.defaultLayout) + "-layout";
-    },
-  },
 };
 </script>
 
