@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      @click="sortSize(filterType)"
+      @click="filterBySize(filterSize)"
       :class="{ active: isActive }"
       class="btn--filter"
     >
@@ -16,7 +16,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "ModalStreamFilterButton",
   props: {
-    filterType: {
+    filterSize: {
       type: String,
       required: true,
       validator: function(value) {
@@ -25,14 +25,14 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["wasteStreamSizeFilter"]),
+    ...mapGetters(["wasteStreamFilterSize"]),
     isActive() {
-      return this.wasteStreamSizeFilter === this.filterType;
+      return this.wasteStreamFilterSize === this.filterSize;
     },
   },
   methods: {
-    sortSize(size) {
-      this.$store.commit("wasteStreamSizeFilter", size);
+    filterBySize(size) {
+      this.$store.commit("wasteStreamFilterSize", size);
     },
   },
 };

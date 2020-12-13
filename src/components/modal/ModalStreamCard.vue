@@ -1,8 +1,8 @@
 <template>
   <div class="container" :class="{ active: isCardActive }">
     <div
-      :class="`card-background-${wasteStreamType}`"
       @click="toggleCard"
+      :class="`card-background-${wasteStreamType}`"
       class="card"
     >
       <img :src="streamSizeImage" alt="Bin Seenons" class="card__image" />
@@ -159,7 +159,7 @@ export default {
   width 100%
   height 100%
   border-radius 2rem
-  padding 2rem
+  padding 1rem 2rem
   display grid
   grid-template-columns 30% 1fr 14rem
   box-shadow 0 3px 6px #33333311

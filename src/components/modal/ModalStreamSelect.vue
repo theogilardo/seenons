@@ -26,17 +26,17 @@ export default {
       labelSelected: null,
     };
   },
-  computed: {
-    ...mapGetters(["wasteStreams"]),
-    isWasteStreamInLocalStorage() {
-      return localStorage.getItem("wasteStreamSelected");
-    },
-  },
   created() {
     if (this.isWasteStreamInLocalStorage) {
       this.updateLabelSelected();
       this.updateWasteStream();
     }
+  },
+  computed: {
+    ...mapGetters(["wasteStreams"]),
+    isWasteStreamInLocalStorage() {
+      return localStorage.getItem("wasteStreamSelected");
+    },
   },
   methods: {
     updateLabelSelected() {
