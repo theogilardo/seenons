@@ -1,5 +1,5 @@
 <template>
-  <div v-if="wasteStreamSelected" class="container-filter">
+  <div v-if="wasteStreamSizeFilter" class="container-filter">
     <div class="container-filter__sizes">
       <modal-stream-filter-button filter-type="all"
         >All
@@ -27,7 +27,7 @@ export default {
     ModalStreamFilterButton,
   },
   computed: {
-    ...mapGetters(["wasteStreamSelected"]),
+    ...mapGetters(["wasteStreamSelected", "wasteStreamSizeFilter"]),
   },
 };
 </script>

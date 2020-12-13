@@ -46,10 +46,7 @@ export default {
     },
     updateWasteStream() {
       this.$store.commit("storewasteStreamSelected", this.labelSelected.type);
-
-      if (!this.isWasteStreamInLocalStorage) {
-        this.storeWasteStreamInLocalStorage();
-      }
+      this.storeWasteStreamInLocalStorage();
     },
     storeWasteStreamInLocalStorage() {
       localStorage.setItem(

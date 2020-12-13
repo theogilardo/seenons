@@ -7,8 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     wasteStreams: null,
-    wasteStreamSelected: null,
-    wasteStreamSizeFilter: "all",
+    wasteStreamSelected: [],
+    wasteStreamSizeFilter: null,
   },
   getters: {
     wasteStreams(state) {
@@ -18,7 +18,7 @@ export default new Vuex.Store({
       return state.wasteStreamSelected.type;
     },
     wasteStreamSelected(state) {
-      return state.wasteStreamSelected?.sizes;
+      return state.wasteStreamSelected;
     },
     wasteStreamSizeFilter(state) {
       return state.wasteStreamSizeFilter;
@@ -32,6 +32,9 @@ export default new Vuex.Store({
       state.wasteStreams = payload;
     },
     storewasteStreamSelected(state, payload) {
+      if (!state.wasteStreamSizeFilter) {
+        state.wasteStreamSizeFilter = "all";
+      }
       state.wasteStreamSelected = state.wasteStreams.filter(
         (wasteStream) => wasteStream.type === payload
       )[0];
