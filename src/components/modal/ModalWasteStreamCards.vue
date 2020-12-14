@@ -2,9 +2,9 @@
   <div class="container-cards">
     <div v-if="wasteStreamSelectedFormatted.length" class="cards">
       <modal-waste-stream-card
-        v-for="wasteStream in wasteStreamSelectedFormatted"
-        :key="wasteStream.container_product_id"
-        :stream-size="wasteStream"
+        v-for="wasteStreamSize in wasteStreamSelectedFormatted"
+        :key="wasteStreamSize.container_product_id"
+        :stream-size="wasteStreamSize"
       />
     </div>
     <div
